@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ae9db4860b92349953d9dc1d3446de, type: 3}
+  m_Name: Lizard
+  m_EditorClassIdentifier: 
+  AttackerType: 0
+  sprite: {fileID: 1157026076, guid: bbcd4171fcdfe4d4ab695e78d8b32f2e, type: 3}
+  AttackerPrefab: {fileID: -1584848894054107696, guid: 7966a78e701e5b543b2c5ebfd091c361, type: 3}
+  Health: 200
+  Damage: 10
+  Speed: 0.3

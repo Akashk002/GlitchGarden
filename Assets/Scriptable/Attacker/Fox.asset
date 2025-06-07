@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ae9db4860b92349953d9dc1d3446de, type: 3}
+  m_Name: Fox
+  m_EditorClassIdentifier: 
+  AttackerType: 1
+  sprite: {fileID: 1629271491, guid: bff5b2b40baa7864ca90589c9b9778ab, type: 3}
+  AttackerPrefab: {fileID: 9186787620682993084, guid: c292c0ca394951a448af7aad67f94f2f, type: 3}
+  Health: 300
+  Damage: 15
+  Speed: 0.3
