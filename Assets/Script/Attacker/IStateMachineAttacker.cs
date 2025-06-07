@@ -10,6 +10,7 @@ public interface IStateMachineAttacker
 public enum AttackerStates
 {
     Appear,
+    Idle,
     Move,
     Attack,
     Jump,

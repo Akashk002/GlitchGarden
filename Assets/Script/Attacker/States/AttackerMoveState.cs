@@ -11,16 +11,14 @@ public class AttackerMoveState : IStateAttacker
 
     public void OnStateEnter()
     {
-        Owner.StartWalking();
+        Owner.WalkAnimation(true);
+        Owner.StartMoveToNextSlot();
     }
     public void Update()
     {
-        Debug.Log("Attacker Move State Update");
-
-        if (Owner.CheckNextSlotIsEmpty())
+        if (Owner.CheckSlotIsEmpty())
         {
-            Owner.AttackerMoving();
-
+            Owner.Moving();
         }
         else
         {
@@ -31,6 +29,6 @@ public class AttackerMoveState : IStateAttacker
 
     public void OnStateExit()
     {
-
+        Owner.WalkAnimation(false);
     }
 }

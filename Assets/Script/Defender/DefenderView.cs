@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class DefenderView : MonoBehaviour
 {
+    public Animator animator;
     private DefenderController defenderController;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,13 @@ public class DefenderView : MonoBehaviour
     {
         //defenderController.UpdateDefender();
     }
+
+    public void CheckHealth()
+    {
+        Debug.Log("Check Health");
+    }
+
+
 
     public void AddStar()
     {

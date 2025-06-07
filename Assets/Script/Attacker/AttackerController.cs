@@ -23,7 +23,7 @@ public class AttackerController
         this.slot = slot;
     }
 
-    public void AttackerMoving()
+    public void Moving()
     {
         if (!isMoving) return;
         attackerView.transform.position = Vector3.MoveTowards(attackerView.transform.position, targetPosition, attackerScriptable.Speed * Time.deltaTime);
@@ -35,17 +35,16 @@ public class AttackerController
             attackerView.transform.position = targetPosition;
             isMoving = false;
 
-            if (CheckNextSlotIsEmpty())
+            if (CheckSlotIsEmpty())
             {
                 StartMoveToNextSlot();
             }
         }
     }
 
-    public bool CheckNextSlotIsEmpty()
+    public bool CheckSlotIsEmpty()
     {
-        var nextSlot = slot.GetNextSlot();
-        if (nextSlot == null || !nextSlot.IsEmpty())
+        if (slot.GetSlotType() != SlotType.Spawn && !slot.IsEmpty())
         {
             return false;
         }
@@ -59,20 +58,24 @@ public class AttackerController
         isMoving = true;
     }
 
-    public virtual void UpdateAttacker() { }
+    public virtual void Update() { }
 
-    public void StartWalking()
+    public void WalkAnimation(bool enable)
     {
-        attackerView.PlayWalkAnimation();
-        StartMoveToNextSlot();
+        attackerView.WalkAnimation(enable);
     }
 
-    public void StartAttacking()
+    public void AttackAnimation(bool enable)
     {
-        attackerView.PlayAttackAnimation();
+        attackerView.AttackAnimation(enable);
     }
 
-    public virtual void ChangeStateToWalk()
+    public void TriggerDamageAnimation()
+    {
+        attackerView.TriggerDamageAnimation();
+    }
+
+    public virtual void ChangeStateToIdle()
     {
 
     }
@@ -84,13 +87,14 @@ public class AttackerController
         if (attackTimer >= attackInterval)
         {
             attackTimer = 0f;
-            AttackPlayer();
+
+            AttackDefender();
         }
     }
 
-    public void AttackPlayer()
+    public void AttackDefender()
     {
-
+        DefenderController defenderController = slot.GetDefenderController();
+        defenderController.TakeDamage(attackerScriptable.Damage);
     }
-
 }

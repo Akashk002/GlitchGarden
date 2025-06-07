@@ -15,12 +15,12 @@ public class FoxController : AttackerController
 
     private void CreateStateMachine() => stateMachine = new FoxStateMachine(this);
 
-    public override void UpdateAttacker()
+    public override void Update()
     {
         stateMachine.Update();
     }
 
-    public override void ChangeStateToWalk()
+    public override void ChangeStateToIdle()
     {
         stateMachine.ChangeState(AttackerStates.Move);
     }

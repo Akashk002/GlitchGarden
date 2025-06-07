@@ -5,7 +5,7 @@ using UnityEngine;
 public class CactusController : DefenderController
 {
     private CactusStateMachine stateMachine;
-    public CactusController(DefenderScriptable defenderScriptable, Slot slot) : base(defenderScriptable, slot)
+    public CactusController(DefenderScriptable defenderScriptable, Slot slot, DefenderModel defenderModel) : base(defenderScriptable, slot, defenderModel)
     {
         defenderView.SetController(this);
         CreateStateMachine();

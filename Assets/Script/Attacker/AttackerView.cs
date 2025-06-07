@@ -17,22 +17,26 @@ public class AttackerView : MonoBehaviour
     {
         if (attackerController != null)
         {
-            attackerController.UpdateAttacker();
+            attackerController.Update();
         }
     }
 
-    public void ChangeStateToWalk()
+    public void ChangeStateToIdle()
     {
-        attackerController.ChangeStateToWalk();
+        attackerController.ChangeStateToIdle();
     }
 
-    public void PlayWalkAnimation()
+    public void WalkAnimation(bool enable)
     {
-        animator.SetBool("IsWalking", true);
+        animator.SetBool("IsWalking", enable);
     }
-    public void PlayAttackAnimation()
+    public void AttackAnimation(bool enable)
     {
-        animator.SetBool("IsWalking", false);
-        animator.SetBool("isAttacking", true);
+        animator.SetBool("isAttacking", enable);
+    }
+
+    public void TriggerDamageAnimation()
+    {
+        animator.SetTrigger("TakeDamage");
     }
 }

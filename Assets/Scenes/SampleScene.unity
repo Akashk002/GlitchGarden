@@ -674,7 +674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68cabc11c64445e4ebe75f640f0dcd9a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a3912604b9b17b47aff7f9d9723da92, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -739,7 +739,7 @@ MonoBehaviour:
   - AttackerType: 1
     AttackerScriptable: {fileID: 11400000, guid: a607eff60b8603648a50e2fe80520d2f, type: 2}
   rows: 5
-  columns: 14
+  columns: 15
 --- !u!4 &872166120
 Transform:
   m_ObjectHideFlags: 0
@@ -835,7 +835,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_TargetDisplay: 0
 --- !u!224 &1047518599
 RectTransform:

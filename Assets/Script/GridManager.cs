@@ -44,6 +44,11 @@ public class GridManager
                     newSlot.SetSlotData(x, y, columns);
                     slotObj.name = $"Slot_{x}_{y}";
                     slotArray[x, y] = newSlot;
+
+                    if (x == 0 || x == columns - 1)
+                    {
+                        newSlot.GetComponent<SpriteRenderer>().enabled = false; // Hide the slots on the edges
+                    }
                 }
             }
         }

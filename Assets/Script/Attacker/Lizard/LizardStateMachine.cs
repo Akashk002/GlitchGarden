@@ -18,6 +18,7 @@ public class LizardStateMachine : IStateMachineAttacker
     private void CreateState()
     {
         States.Add(AttackerStates.Appear, new AttackerAppearState(this));
+        States.Add(AttackerStates.Idle, new AttackerIdleState(this));
         States.Add(AttackerStates.Move, new AttackerMoveState(this));
         States.Add(AttackerStates.Attack, new AttackerAttackState(this));
         States.Add(AttackerStates.Die, new AttackerDieState(this));

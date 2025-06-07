@@ -11,15 +11,22 @@ public class AttackerAttackState : IStateAttacker
 
     public void OnStateEnter()
     {
-        Owner.StartAttacking();
+        Owner.AttackAnimation(true);
     }
     public void Update()
     {
-
+        if (!Owner.CheckSlotIsEmpty())
+        {
+            Owner.Attacking();
+        }
+        else
+        {
+            stateMachine.ChangeState(AttackerStates.Idle);
+        }
     }
 
     public void OnStateExit()
     {
-
+        Owner.AttackAnimation(false);
     }
 }

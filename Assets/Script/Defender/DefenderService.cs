@@ -18,7 +18,10 @@ public class DefenderService
         if (slot != null && slot.IsEmpty() && slot.GetSlotType() == SlotType.Normal)
         {
             DefenderScriptable defenderScriptable = DefenderDataList.Find(data => data.defenderType == defenderType)?.DefenderScriptable;
-            DefenderController defenderController = new DefenderController(defenderScriptable, slot);
+
+            DefenderModel defenderModel = new DefenderModel(defenderScriptable);
+
+            DefenderController defenderController = new DefenderController(defenderScriptable, slot, defenderModel);
             slot.SetDefenderController(defenderController);
             CurrencyHandler.Instance.SpendCurrency(defenderScriptable.Cost);
             return true;

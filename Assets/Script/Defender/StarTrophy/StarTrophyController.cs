@@ -5,7 +5,7 @@ using UnityEngine;
 public class StarTrophyController : DefenderController
 {
     private StarTrophyStateMachine stateMachine;
-    public StarTrophyController(DefenderScriptable defenderScriptable, Slot slot) : base(defenderScriptable, slot)
+    public StarTrophyController(DefenderScriptable defenderScriptable, Slot slot, DefenderModel defenderModel) : base(defenderScriptable, slot, defenderModel)
     {
         defenderView.SetController(this);
         CreateStateMachine();

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GnomeController : DefenderController
 {
     private GnomeStateMachine stateMachine;
-    public GnomeController(DefenderScriptable defenderScriptable, Slot slot) : base(defenderScriptable, slot)
+    public GnomeController(DefenderScriptable defenderScriptable, Slot slot, DefenderModel defenderModel) : base(defenderScriptable, slot, defenderModel)
     {
         defenderView.SetController(this);
         CreateStateMachine();

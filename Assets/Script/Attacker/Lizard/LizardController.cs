@@ -15,13 +15,13 @@ public class LizardController : AttackerController
 
     private void CreateStateMachine() => stateMachine = new LizardStateMachine(this);
 
-    public override void UpdateAttacker()
+    public override void Update()
     {
         stateMachine.Update();
     }
 
-    public override void ChangeStateToWalk()
+    public override void ChangeStateToIdle()
     {
-        stateMachine.ChangeState(AttackerStates.Move);
+        stateMachine.ChangeState(AttackerStates.Idle);
     }
 }

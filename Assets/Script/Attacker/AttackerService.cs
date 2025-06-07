@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackerService : MonoBehaviour
+public class AttackerService
 {
     private List<AttackerData> attackerDataList;
 

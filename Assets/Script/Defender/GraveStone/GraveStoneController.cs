@@ -5,7 +5,7 @@ using UnityEngine;
 public class GraveStoneController : DefenderController
 {
     private GraveStoneStateMachine stateMachine;
-    public GraveStoneController(DefenderScriptable defenderScriptable, Slot slot) : base(defenderScriptable, slot)
+    public GraveStoneController(DefenderScriptable defenderScriptable, Slot slot, DefenderModel defenderModel) : base(defenderScriptable, slot, defenderModel)
     {
         defenderView.SetController(this);
         CreateStateMachine();

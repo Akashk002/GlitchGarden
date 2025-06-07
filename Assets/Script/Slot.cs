@@ -34,11 +34,17 @@ public class Slot : MonoBehaviour
         SetSlotType();
     }
 
+    public DefenderController GetDefenderController()
+    {
+        return defenderController;
+    }
+
     public void SetDefenderController(DefenderController defenderController)
     {
         if (IsEmpty())
             this.defenderController = defenderController;
     }
+
     public void RemoveDefenderController()
     {
         this.defenderController = null;

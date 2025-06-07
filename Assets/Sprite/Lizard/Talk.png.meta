@@ -126,10 +126,10 @@ TextureImporter:
       name: Talk_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 930
-        width: 251
-        height: 186
+        x: 37
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Talk_1
       rect:
         serializedVersion: 2
-        x: 251
-        y: 930
-        width: 251
-        height: 186
+        x: 288
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Talk_2
       rect:
         serializedVersion: 2
-        x: 502
-        y: 930
-        width: 251
-        height: 186
+        x: 539
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: Talk_3
       rect:
         serializedVersion: 2
-        x: 753
-        y: 930
-        width: 251
-        height: 186
+        x: 790
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: Talk_4
       rect:
         serializedVersion: 2
-        x: 1004
-        y: 930
-        width: 251
-        height: 186
+        x: 1041
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: Talk_5
       rect:
         serializedVersion: 2
-        x: 1255
-        y: 930
-        width: 251
-        height: 186
+        x: 1292
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: Talk_6
       rect:
         serializedVersion: 2
-        x: 1506
-        y: 930
-        width: 251
-        height: 186
+        x: 1543
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: Talk_7
       rect:
         serializedVersion: 2
-        x: 1757
-        y: 930
-        width: 251
-        height: 186
+        x: 1794
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: Talk_8
       rect:
         serializedVersion: 2
-        x: 2008
-        y: 930
-        width: 251
-        height: 186
+        x: 2045
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: Talk_9
       rect:
         serializedVersion: 2
-        x: 2259
-        y: 930
-        width: 251
-        height: 186
+        x: 2296
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,10 +336,10 @@ TextureImporter:
       name: Talk_10
       rect:
         serializedVersion: 2
-        x: 2510
-        y: 930
-        width: 251
-        height: 186
+        x: 2547
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,10 +357,10 @@ TextureImporter:
       name: Talk_11
       rect:
         serializedVersion: 2
-        x: 2761
-        y: 930
-        width: 251
-        height: 186
+        x: 2799
+        y: 952
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,10 +378,10 @@ TextureImporter:
       name: Talk_12
       rect:
         serializedVersion: 2
-        x: 3012
-        y: 930
-        width: 251
-        height: 186
+        x: 3049
+        y: 952
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,10 +399,10 @@ TextureImporter:
       name: Talk_13
       rect:
         serializedVersion: 2
-        x: 3263
-        y: 930
-        width: 251
-        height: 186
+        x: 3301
+        y: 952
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,10 +420,10 @@ TextureImporter:
       name: Talk_14
       rect:
         serializedVersion: 2
-        x: 3514
-        y: 930
-        width: 251
-        height: 186
+        x: 3552
+        y: 952
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,10 +441,10 @@ TextureImporter:
       name: Talk_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 744
-        width: 251
-        height: 186
+        x: 38
+        y: 766
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: Talk_16
       rect:
         serializedVersion: 2
-        x: 251
-        y: 744
-        width: 251
-        height: 186
+        x: 289
+        y: 766
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -483,10 +483,10 @@ TextureImporter:
       name: Talk_17
       rect:
         serializedVersion: 2
-        x: 502
-        y: 744
-        width: 251
-        height: 186
+        x: 540
+        y: 766
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -504,10 +504,10 @@ TextureImporter:
       name: Talk_18
       rect:
         serializedVersion: 2
-        x: 753
-        y: 744
-        width: 251
-        height: 186
+        x: 791
+        y: 766
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,10 +525,10 @@ TextureImporter:
       name: Talk_19
       rect:
         serializedVersion: 2
-        x: 1004
-        y: 744
-        width: 251
-        height: 186
+        x: 1042
+        y: 766
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -546,10 +546,10 @@ TextureImporter:
       name: Talk_20
       rect:
         serializedVersion: 2
-        x: 1255
-        y: 744
-        width: 251
-        height: 186
+        x: 1292
+        y: 766
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -567,10 +567,10 @@ TextureImporter:
       name: Talk_21
       rect:
         serializedVersion: 2
-        x: 1506
-        y: 744
-        width: 251
-        height: 186
+        x: 1543
+        y: 766
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -588,10 +588,10 @@ TextureImporter:
       name: Talk_22
       rect:
         serializedVersion: 2
-        x: 1757
-        y: 744
-        width: 251
-        height: 186
+        x: 1794
+        y: 766
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -609,10 +609,10 @@ TextureImporter:
       name: Talk_23
       rect:
         serializedVersion: 2
-        x: 2008
-        y: 744
-        width: 251
-        height: 186
+        x: 2045
+        y: 766
+        width: 80
+        height: 87
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -630,10 +630,10 @@ TextureImporter:
       name: Talk_24
       rect:
         serializedVersion: 2
-        x: 2259
-        y: 744
-        width: 251
-        height: 186
+        x: 2295
+        y: 766
+        width: 81
+        height: 87
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -651,10 +651,10 @@ TextureImporter:
       name: Talk_25
       rect:
         serializedVersion: 2
-        x: 2510
-        y: 744
-        width: 251
-        height: 186
+        x: 2546
+        y: 766
+        width: 81
+        height: 87
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -672,10 +672,10 @@ TextureImporter:
       name: Talk_26
       rect:
         serializedVersion: 2
-        x: 2761
-        y: 744
-        width: 251
-        height: 186
+        x: 2797
+        y: 766
+        width: 81
+        height: 87
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -693,10 +693,10 @@ TextureImporter:
       name: Talk_27
       rect:
         serializedVersion: 2
-        x: 3012
-        y: 744
-        width: 251
-        height: 186
+        x: 3048
+        y: 766
+        width: 81
+        height: 87
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -714,10 +714,10 @@ TextureImporter:
       name: Talk_28
       rect:
         serializedVersion: 2
-        x: 3263
-        y: 744
-        width: 251
-        height: 186
+        x: 3300
+        y: 766
+        width: 80
+        height: 87
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -735,10 +735,10 @@ TextureImporter:
       name: Talk_29
       rect:
         serializedVersion: 2
-        x: 3514
-        y: 744
-        width: 251
-        height: 186
+        x: 3551
+        y: 766
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -756,10 +756,10 @@ TextureImporter:
       name: Talk_30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 558
-        width: 251
-        height: 186
+        x: 37
+        y: 580
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -777,10 +777,10 @@ TextureImporter:
       name: Talk_31
       rect:
         serializedVersion: 2
-        x: 251
-        y: 558
-        width: 251
-        height: 186
+        x: 288
+        y: 580
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -798,10 +798,10 @@ TextureImporter:
       name: Talk_32
       rect:
         serializedVersion: 2
-        x: 502
-        y: 558
-        width: 251
-        height: 186
+        x: 540
+        y: 580
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -819,10 +819,10 @@ TextureImporter:
       name: Talk_33
       rect:
         serializedVersion: 2
-        x: 753
-        y: 558
-        width: 251
-        height: 186
+        x: 791
+        y: 580
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -840,10 +840,10 @@ TextureImporter:
       name: Talk_34
       rect:
         serializedVersion: 2
-        x: 1004
-        y: 558
-        width: 251
-        height: 186
+        x: 1042
+        y: 580
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -861,10 +861,10 @@ TextureImporter:
       name: Talk_35
       rect:
         serializedVersion: 2
-        x: 1255
-        y: 558
-        width: 251
-        height: 186
+        x: 1293
+        y: 580
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -882,10 +882,10 @@ TextureImporter:
       name: Talk_36
       rect:
         serializedVersion: 2
-        x: 1506
-        y: 558
-        width: 251
-        height: 186
+        x: 1544
+        y: 580
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -903,10 +903,10 @@ TextureImporter:
       name: Talk_37
       rect:
         serializedVersion: 2
-        x: 1757
-        y: 558
-        width: 251
-        height: 186
+        x: 1794
+        y: 580
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -924,10 +924,10 @@ TextureImporter:
       name: Talk_38
       rect:
         serializedVersion: 2
-        x: 2008
-        y: 558
-        width: 251
-        height: 186
+        x: 2046
+        y: 580
+        width: 79
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -945,10 +945,10 @@ TextureImporter:
       name: Talk_39
       rect:
         serializedVersion: 2
-        x: 2259
-        y: 558
-        width: 251
-        height: 186
+        x: 2296
+        y: 580
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -966,10 +966,10 @@ TextureImporter:
       name: Talk_40
       rect:
         serializedVersion: 2
-        x: 2510
-        y: 558
-        width: 251
-        height: 186
+        x: 2547
+        y: 580
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -987,10 +987,10 @@ TextureImporter:
       name: Talk_41
       rect:
         serializedVersion: 2
-        x: 2761
-        y: 558
-        width: 251
-        height: 186
+        x: 2798
+        y: 580
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1008,10 +1008,10 @@ TextureImporter:
       name: Talk_42
       rect:
         serializedVersion: 2
-        x: 3012
-        y: 558
-        width: 251
-        height: 186
+        x: 3049
+        y: 580
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1029,10 +1029,10 @@ TextureImporter:
       name: Talk_43
       rect:
         serializedVersion: 2
-        x: 3263
-        y: 558
-        width: 251
-        height: 186
+        x: 3300
+        y: 580
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1050,10 +1050,10 @@ TextureImporter:
       name: Talk_44
       rect:
         serializedVersion: 2
-        x: 3514
-        y: 558
-        width: 251
-        height: 186
+        x: 3551
+        y: 580
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1071,10 +1071,10 @@ TextureImporter:
       name: Talk_45
       rect:
         serializedVersion: 2
-        x: 0
-        y: 372
-        width: 251
-        height: 186
+        x: 37
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1092,10 +1092,10 @@ TextureImporter:
       name: Talk_46
       rect:
         serializedVersion: 2
-        x: 251
-        y: 372
-        width: 251
-        height: 186
+        x: 288
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1113,10 +1113,10 @@ TextureImporter:
       name: Talk_47
       rect:
         serializedVersion: 2
-        x: 502
-        y: 372
-        width: 251
-        height: 186
+        x: 539
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1134,10 +1134,10 @@ TextureImporter:
       name: Talk_48
       rect:
         serializedVersion: 2
-        x: 753
-        y: 372
-        width: 251
-        height: 186
+        x: 790
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1155,10 +1155,10 @@ TextureImporter:
       name: Talk_49
       rect:
         serializedVersion: 2
-        x: 1004
-        y: 372
-        width: 251
-        height: 186
+        x: 1041
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1176,10 +1176,10 @@ TextureImporter:
       name: Talk_50
       rect:
         serializedVersion: 2
-        x: 1255
-        y: 372
-        width: 251
-        height: 186
+        x: 1292
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1197,10 +1197,10 @@ TextureImporter:
       name: Talk_51
       rect:
         serializedVersion: 2
-        x: 1506
-        y: 372
-        width: 251
-        height: 186
+        x: 1543
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1218,10 +1218,10 @@ TextureImporter:
       name: Talk_52
       rect:
         serializedVersion: 2
-        x: 1757
-        y: 372
-        width: 251
-        height: 186
+        x: 1794
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1239,10 +1239,10 @@ TextureImporter:
       name: Talk_53
       rect:
         serializedVersion: 2
-        x: 2008
-        y: 372
-        width: 251
-        height: 186
+        x: 2045
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1260,10 +1260,10 @@ TextureImporter:
       name: Talk_54
       rect:
         serializedVersion: 2
-        x: 2259
-        y: 372
-        width: 251
-        height: 186
+        x: 2296
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1281,10 +1281,10 @@ TextureImporter:
       name: Talk_55
       rect:
         serializedVersion: 2
-        x: 2510
-        y: 372
-        width: 251
-        height: 186
+        x: 2547
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1302,10 +1302,10 @@ TextureImporter:
       name: Talk_56
       rect:
         serializedVersion: 2
-        x: 2761
-        y: 372
-        width: 251
-        height: 186
+        x: 2798
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1323,10 +1323,10 @@ TextureImporter:
       name: Talk_57
       rect:
         serializedVersion: 2
-        x: 3012
-        y: 372
-        width: 251
-        height: 186
+        x: 3049
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1344,10 +1344,10 @@ TextureImporter:
       name: Talk_58
       rect:
         serializedVersion: 2
-        x: 3263
-        y: 372
-        width: 251
-        height: 186
+        x: 3300
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1365,10 +1365,10 @@ TextureImporter:
       name: Talk_59
       rect:
         serializedVersion: 2
-        x: 3514
-        y: 372
-        width: 251
-        height: 186
+        x: 3551
+        y: 394
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1386,10 +1386,10 @@ TextureImporter:
       name: Talk_60
       rect:
         serializedVersion: 2
-        x: 0
-        y: 186
-        width: 251
-        height: 186
+        x: 37
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1407,10 +1407,10 @@ TextureImporter:
       name: Talk_61
       rect:
         serializedVersion: 2
-        x: 251
-        y: 186
-        width: 251
-        height: 186
+        x: 288
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1428,10 +1428,10 @@ TextureImporter:
       name: Talk_62
       rect:
         serializedVersion: 2
-        x: 502
-        y: 186
-        width: 251
-        height: 186
+        x: 539
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1449,10 +1449,10 @@ TextureImporter:
       name: Talk_63
       rect:
         serializedVersion: 2
-        x: 753
-        y: 186
-        width: 251
-        height: 186
+        x: 790
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1470,10 +1470,10 @@ TextureImporter:
       name: Talk_64
       rect:
         serializedVersion: 2
-        x: 1004
-        y: 186
-        width: 251
-        height: 186
+        x: 1041
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1491,10 +1491,10 @@ TextureImporter:
       name: Talk_65
       rect:
         serializedVersion: 2
-        x: 1255
-        y: 186
-        width: 251
-        height: 186
+        x: 1292
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1512,10 +1512,10 @@ TextureImporter:
       name: Talk_66
       rect:
         serializedVersion: 2
-        x: 1506
-        y: 186
-        width: 251
-        height: 186
+        x: 1543
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1533,10 +1533,10 @@ TextureImporter:
       name: Talk_67
       rect:
         serializedVersion: 2
-        x: 1757
-        y: 186
-        width: 251
-        height: 186
+        x: 1794
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1554,10 +1554,10 @@ TextureImporter:
       name: Talk_68
       rect:
         serializedVersion: 2
-        x: 2008
-        y: 186
-        width: 251
-        height: 186
+        x: 2045
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1575,10 +1575,10 @@ TextureImporter:
       name: Talk_69
       rect:
         serializedVersion: 2
-        x: 2259
-        y: 186
-        width: 251
-        height: 186
+        x: 2296
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1596,10 +1596,10 @@ TextureImporter:
       name: Talk_70
       rect:
         serializedVersion: 2
-        x: 2510
-        y: 186
-        width: 251
-        height: 186
+        x: 2547
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1617,10 +1617,10 @@ TextureImporter:
       name: Talk_71
       rect:
         serializedVersion: 2
-        x: 2761
-        y: 186
-        width: 251
-        height: 186
+        x: 2798
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1638,10 +1638,10 @@ TextureImporter:
       name: Talk_72
       rect:
         serializedVersion: 2
-        x: 3012
-        y: 186
-        width: 251
-        height: 186
+        x: 3049
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1659,10 +1659,10 @@ TextureImporter:
       name: Talk_73
       rect:
         serializedVersion: 2
-        x: 3263
-        y: 186
-        width: 251
-        height: 186
+        x: 3300
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1680,10 +1680,10 @@ TextureImporter:
       name: Talk_74
       rect:
         serializedVersion: 2
-        x: 3514
-        y: 186
-        width: 251
-        height: 186
+        x: 3551
+        y: 208
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1701,10 +1701,10 @@ TextureImporter:
       name: Talk_75
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 251
-        height: 186
+        x: 37
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1722,10 +1722,10 @@ TextureImporter:
       name: Talk_76
       rect:
         serializedVersion: 2
-        x: 251
-        y: 0
-        width: 251
-        height: 186
+        x: 288
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1743,10 +1743,10 @@ TextureImporter:
       name: Talk_77
       rect:
         serializedVersion: 2
-        x: 502
-        y: 0
-        width: 251
-        height: 186
+        x: 539
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1764,10 +1764,10 @@ TextureImporter:
       name: Talk_78
       rect:
         serializedVersion: 2
-        x: 753
-        y: 0
-        width: 251
-        height: 186
+        x: 790
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1785,10 +1785,10 @@ TextureImporter:
       name: Talk_79
       rect:
         serializedVersion: 2
-        x: 1004
-        y: 0
-        width: 251
-        height: 186
+        x: 1041
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1806,10 +1806,10 @@ TextureImporter:
       name: Talk_80
       rect:
         serializedVersion: 2
-        x: 1255
-        y: 0
-        width: 251
-        height: 186
+        x: 1292
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1827,10 +1827,10 @@ TextureImporter:
       name: Talk_81
       rect:
         serializedVersion: 2
-        x: 1506
-        y: 0
-        width: 251
-        height: 186
+        x: 1543
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1848,10 +1848,10 @@ TextureImporter:
       name: Talk_82
       rect:
         serializedVersion: 2
-        x: 1757
-        y: 0
-        width: 251
-        height: 186
+        x: 1794
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1869,10 +1869,10 @@ TextureImporter:
       name: Talk_83
       rect:
         serializedVersion: 2
-        x: 2008
-        y: 0
-        width: 251
-        height: 186
+        x: 2045
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1890,10 +1890,10 @@ TextureImporter:
       name: Talk_84
       rect:
         serializedVersion: 2
-        x: 2259
-        y: 0
-        width: 251
-        height: 186
+        x: 2296
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1911,10 +1911,10 @@ TextureImporter:
       name: Talk_85
       rect:
         serializedVersion: 2
-        x: 2510
-        y: 0
-        width: 251
-        height: 186
+        x: 2547
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1932,10 +1932,10 @@ TextureImporter:
       name: Talk_86
       rect:
         serializedVersion: 2
-        x: 2761
-        y: 0
-        width: 251
-        height: 186
+        x: 2798
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1953,10 +1953,10 @@ TextureImporter:
       name: Talk_87
       rect:
         serializedVersion: 2
-        x: 3012
-        y: 0
-        width: 251
-        height: 186
+        x: 3049
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1974,10 +1974,10 @@ TextureImporter:
       name: Talk_88
       rect:
         serializedVersion: 2
-        x: 3263
-        y: 0
-        width: 251
-        height: 186
+        x: 3300
+        y: 22
+        width: 80
+        height: 86
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

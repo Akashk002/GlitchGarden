@@ -9,11 +9,12 @@ public class DefenderController
     protected DefenderModel defenderModel;
     protected Slot slot;
 
-    public DefenderController(DefenderScriptable defenderScriptable, Slot slot)
+    public DefenderController(DefenderScriptable defenderScriptable, Slot slot, DefenderModel defenderModel)
     {
-        this.defenderScriptable = defenderScriptable;
         defenderView = Object.Instantiate(defenderScriptable.DefenderPrefab, slot.GetPos(), Quaternion.identity);
         this.slot = slot;
+        this.defenderModel = defenderModel;
+        defenderModel.SetDefenderController(this);
     }
 
     public virtual void UpdateDefender()
@@ -21,8 +22,15 @@ public class DefenderController
 
     }
 
+    public void TakeDamage(int val)
+    {
+        defenderView.animator.SetTrigger("TakeDamage");
+        defenderModel.TakeDamage(val);
+    }
+
     public void DefenderDie()
     {
+        defenderView.DefenderDie();
         slot.RemoveDefenderController();
     }
 }
