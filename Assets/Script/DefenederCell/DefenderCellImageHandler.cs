@@ -32,7 +32,7 @@ public class DefenderCellImageHandler : MonoBehaviour, IPointerDownHandler, IDra
 
     private void FixedUpdate()
     {
-        if (CurrencyHandler.Instance.CanAfford(DefenderScriptable.Cost))
+        if (CurrencyManager.Instance.CanAfford(DefenderScriptable.Cost))
         {
             cellImage.color = new Color(1, 1, 1, 1f);
             canAfford = true;

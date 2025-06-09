@@ -43,9 +43,8 @@ public class DefenderController
         return false;
     }
 
-    public void TakeDamage(int val)
+    public virtual void TakeDamage(int val)
     {
-        defenderView.animator.SetTrigger("TakeDamage");
         defenderModel.TakeDamage(val);
     }
 
@@ -58,6 +57,11 @@ public class DefenderController
     public void AttackAnimation(bool enable)
     {
         defenderView.AttackAnimation(enable);
+    }
+
+    public void TriggerTakeDamageAnimation()
+    {
+        defenderView.TriggerTakeDamageAnimation();
     }
 
     public void FiringProjectile()
@@ -75,5 +79,10 @@ public class DefenderController
     {
         DefenderProjectile projectile = Object.Instantiate(defenderScriptable.Projectile, defenderView.shootPoint.position, Quaternion.identity);
         projectile.SetDamageRate(defenderScriptable.Damage);
+    }
+
+    public virtual void ChangeStateToIdle()
+    {
+
     }
 }

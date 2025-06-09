@@ -23,19 +23,23 @@ public class DefenderView : MonoBehaviour
         defenderController.Update();
     }
 
-    public void CheckHealth()
+    public void ChangeStateToIdle()
     {
-        Debug.Log("Check Health");
+        defenderController.ChangeStateToIdle();
     }
 
     public void AttackAnimation(bool enable)
     {
         animator.SetBool("isAttacking", enable);
     }
+    public void TriggerTakeDamageAnimation()
+    {
+        animator.SetTrigger("TakeDamage");
+    }
 
     public void AddStar()
     {
-        CurrencyHandler.Instance.AddCurrency(25);
+        CurrencyManager.Instance.AddCurrency(25);
     }
 
     public void SetController(DefenderController defenderController)

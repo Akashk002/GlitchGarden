@@ -23,7 +23,9 @@ public class FoxStateMachine : IStateMachineAttacker
         States.Add(AttackerStates.Move, new AttackerMoveState(this));
         States.Add(AttackerStates.Attack, new AttackerAttackState(this));
         States.Add(AttackerStates.Jump, new AttackerJumpState(this));
+        States.Add(AttackerStates.TakeDamage, new AttackerTakeDamageState(this));
         States.Add(AttackerStates.Die, new AttackerDieState(this));
+
     }
 
     private void SetOwner()

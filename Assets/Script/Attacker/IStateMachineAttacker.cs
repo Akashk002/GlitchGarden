@@ -14,6 +14,7 @@ public enum AttackerStates
     Move,
     Attack,
     Jump,
+    TakeDamage,
     Die,
 }
 

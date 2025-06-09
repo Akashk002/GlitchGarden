@@ -24,4 +24,10 @@ public class LizardController : AttackerController
     {
         stateMachine.ChangeState(AttackerStates.Idle);
     }
+
+    public override void TakeDamage(int val)
+    {
+        base.TakeDamage(val);
+        stateMachine.ChangeState(AttackerStates.TakeDamage);
+    }
 }

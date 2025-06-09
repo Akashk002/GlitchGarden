@@ -48,6 +48,11 @@ public class AttackerController
         attackerView.transform.position = Vector3.MoveTowards(attackerView.transform.position, targetPosition, attackerScriptable.Speed * Time.deltaTime * 3);
         if (Vector3.Distance(attackerView.transform.position, targetPosition) < 0.01f)
         {
+            if (slot.GetSlotType() == SlotType.Base)
+            {
+                UIManager.Instance.OpenGameOverPanel();
+            }
+
             slot = slot.GetNextSlot();
             attackerView.transform.position = targetPosition;
             isMoving = false;
@@ -74,6 +79,12 @@ public class AttackerController
 
     public void StartMoveToNextSlot()
     {
+        if (slot.GetSlotType() == SlotType.Base)
+        {
+            UIManager.Instance.OpenGameOverPanel();
+            return;
+        }
+
         var nextSlot = slot.GetNextSlot();
         targetPosition = new Vector3(nextSlot.GetPos().x, attackerView.transform.position.y, attackerView.transform.position.z);
         isMoving = true;
@@ -141,9 +152,8 @@ public class AttackerController
         attackerView.Die();
     }
 
-    public void TakeDamage(int val)
+    public virtual void TakeDamage(int val)
     {
-        attackerView.animator.SetTrigger("TakeDamage");
         attackerModel.TakeDamage(val);
     }
 }

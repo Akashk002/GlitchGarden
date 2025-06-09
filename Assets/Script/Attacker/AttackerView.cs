@@ -25,6 +25,10 @@ public class AttackerView : MonoBehaviour
     {
         attackerController.ChangeStateToIdle();
     }
+    public virtual void ChangeStateToTakeDamage()
+    {
+
+    }
 
     public void WalkAnimation(bool enable)
     {

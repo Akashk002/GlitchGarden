@@ -42,7 +42,7 @@ public class DefenderService
             }
 
             slot.SetDefenderController(defenderController);
-            CurrencyHandler.Instance.SpendCurrency(defenderScriptable.Cost);
+            CurrencyManager.Instance.SpendCurrency(defenderScriptable.Cost);
             return true;
         }
         return false;

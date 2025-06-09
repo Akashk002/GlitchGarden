@@ -24,4 +24,10 @@ public class FoxController : AttackerController
     {
         stateMachine.ChangeState(AttackerStates.Move);
     }
+
+    public override void TakeDamage(int val)
+    {
+        base.TakeDamage(val);
+        stateMachine.ChangeState(AttackerStates.TakeDamage);
+    }
 }

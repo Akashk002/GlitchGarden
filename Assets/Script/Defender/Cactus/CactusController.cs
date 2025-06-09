@@ -17,5 +17,16 @@ public class CactusController : DefenderController
     {
         stateMachine.Update();
     }
+
+    public override void ChangeStateToIdle()
+    {
+        stateMachine.ChangeState(DefenderStates.Idle);
+    }
+
+    public override void TakeDamage(int val)
+    {
+        base.TakeDamage(val);
+        stateMachine.ChangeState(DefenderStates.TakeDamage);
+    }
 }
 
