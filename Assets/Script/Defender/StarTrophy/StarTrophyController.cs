@@ -13,7 +13,7 @@ public class StarTrophyController : DefenderController
     }
     private void CreateStateMachine() => stateMachine = new StarTrophyStateMachine(this);
 
-    public override void UpdateDefender()
+    public override void Update()
     {
         stateMachine.Update();
     }

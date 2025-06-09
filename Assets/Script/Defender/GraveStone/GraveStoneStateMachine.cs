@@ -31,6 +31,7 @@ public class GraveStoneStateMachine : IStateMachineDefender
     }
 
     public void Update() => currentState?.Update();
+
     public void ChangeState(IStateDefender newState)
     {
         currentState?.OnStateExit();

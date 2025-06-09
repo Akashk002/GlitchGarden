@@ -11,15 +11,19 @@ public class DefenderIdleState : IStateDefender
 
     public void OnStateEnter()
     {
-        throw new System.NotImplementedException();
+
     }
     public void Update()
     {
-        throw new System.NotImplementedException();
+        DefenderType defenderType = Owner.defenderScriptable.DefenderType;
+
+        if ((defenderType == DefenderType.Cactus || defenderType == DefenderType.Gnome) && Owner.AttackerFound())
+        {
+            stateMachine.ChangeState(DefenderStates.Attack);
+        }
     }
 
     public void OnStateExit()
     {
-        throw new System.NotImplementedException();
     }
 }

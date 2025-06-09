@@ -11,15 +11,16 @@ public class AttackerJumpState : IStateAttacker
 
     public void OnStateEnter()
     {
-        throw new System.NotImplementedException();
+        Owner.TriggerJumpAnimation();
+        Owner.StartMoveToNextSlot();
     }
     public void Update()
     {
-        throw new System.NotImplementedException();
+        Owner.Jumping();
     }
 
     public void OnStateExit()
     {
-        throw new System.NotImplementedException();
+
     }
 }

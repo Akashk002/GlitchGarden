@@ -6,7 +6,7 @@ public class LizardController : AttackerController
 {
     private LizardStateMachine stateMachine;
 
-    public LizardController(AttackerScriptable attackerScriptable, Slot slot) : base(attackerScriptable, slot)
+    public LizardController(AttackerScriptable attackerScriptable, Slot slot, AttackerModel attackerModel) : base(attackerScriptable, slot, attackerModel)
     {
         attackerView.SetController(this);
         CreateStateMachine();

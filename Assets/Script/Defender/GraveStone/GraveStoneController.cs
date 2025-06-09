@@ -13,7 +13,7 @@ public class GraveStoneController : DefenderController
     }
     private void CreateStateMachine() => stateMachine = new GraveStoneStateMachine(this);
 
-    public override void UpdateDefender()
+    public override void Update()
     {
         stateMachine.Update();
     }

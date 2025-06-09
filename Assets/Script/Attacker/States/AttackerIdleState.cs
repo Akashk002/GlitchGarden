@@ -13,15 +13,23 @@ public class AttackerIdleState : IStateAttacker
     {
 
     }
+
     public void Update()
     {
-        if (Owner.CheckSlotIsEmpty())
+        if (!Owner.CheckSlotIsEmpty() && Owner.OnReachingSlot())
         {
-            stateMachine.ChangeState(AttackerStates.Move);
+            if (Owner.GetAttackerType() == AttackerType.Fox && Owner.GetSlotDefenderType() == DefenderType.GraveStone)
+            {
+                stateMachine.ChangeState(AttackerStates.Jump);
+            }
+            else
+            {
+                stateMachine.ChangeState(AttackerStates.Attack);
+            }
         }
         else
         {
-            stateMachine.ChangeState(AttackerStates.Attack);
+            stateMachine.ChangeState(AttackerStates.Move);
         }
     }
 

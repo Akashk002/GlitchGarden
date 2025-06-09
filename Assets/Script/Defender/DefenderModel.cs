@@ -22,7 +22,7 @@ public class DefenderModel
         health -= damage;
         if (health <= 0)
         {
-            defenderController.DefenderDie();
+            defenderController.Die();
         }
     }
 

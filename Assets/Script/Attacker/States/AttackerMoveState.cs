@@ -16,15 +16,14 @@ public class AttackerMoveState : IStateAttacker
     }
     public void Update()
     {
-        if (Owner.CheckSlotIsEmpty())
+        if (!Owner.CheckSlotIsEmpty() && Owner.OnReachingSlot())
         {
-            Owner.Moving();
+            stateMachine.ChangeState(AttackerStates.Idle);
         }
         else
         {
-            stateMachine.ChangeState(AttackerStates.Attack);
+            Owner.Moving();
         }
-
     }
 
     public void OnStateExit()

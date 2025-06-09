@@ -28,7 +28,12 @@ public class GameService : GenericMonoSingleton<GameService>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            attackerService.CreateAttacker(AttackerType.Fox);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             attackerService.CreateAttacker(AttackerType.Lizard);
         }

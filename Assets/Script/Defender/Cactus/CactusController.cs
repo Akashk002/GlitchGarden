@@ -13,7 +13,7 @@ public class CactusController : DefenderController
     }
     private void CreateStateMachine() => stateMachine = new CactusStateMachine(this);
 
-    public override void UpdateDefender()
+    public override void Update()
     {
         stateMachine.Update();
     }

@@ -18,8 +18,10 @@ public class AttackerService
         if (slot != null && slot.IsEmpty() && slot.GetSlotType() == SlotType.Spawn)
         {
             AttackerScriptable attackerScriptable = attackerDataList.Find(data => data.AttackerType == attackerType)?.AttackerScriptable;
-            AttackerController attackerController = new LizardController(attackerScriptable, slot);
-            //slot.SetAttackerController(attackerController);
+
+            AttackerModel attackerModel = new AttackerModel(attackerScriptable);
+
+            AttackerController attackerController = (attackerType == AttackerType.Lizard) ? new LizardController(attackerScriptable, slot, attackerModel) : new FoxController(attackerScriptable, slot, attackerModel);
             return true;
         }
         return false;

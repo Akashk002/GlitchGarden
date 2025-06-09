@@ -11,7 +11,7 @@ public class Slot : MonoBehaviour
     private int maxColumn;
     public SlotType slotType;
     private DefenderController defenderController = null;
-    private AttackerController attackerController = null;
+
     public Vector3 GetPos()
     {
         return GameService.Instance.GridManager.GetWorldPosition(columnIndex, rowIndex);
@@ -23,7 +23,6 @@ public class Slot : MonoBehaviour
         {
             return GameService.Instance.GridManager.GetSlot(columnIndex - 1, rowIndex);
         }
-
         return null;
     }
     public void SetSlotData(int columnIndex, int rowIndex, int maxColumn)
@@ -48,15 +47,6 @@ public class Slot : MonoBehaviour
     public void RemoveDefenderController()
     {
         this.defenderController = null;
-    }
-
-    public void SetAttackerController(AttackerController attackerController)
-    {
-        this.attackerController = attackerController;
-    }
-    public void RemoveAttackerController()
-    {
-        this.attackerController = null;
     }
 
     public bool IsEmpty()

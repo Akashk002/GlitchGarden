@@ -13,7 +13,7 @@ public class GnomeController : DefenderController
     }
     private void CreateStateMachine() => stateMachine = new GnomeStateMachine(this);
 
-    public override void UpdateDefender()
+    public override void Update()
     {
         stateMachine.Update();
     }

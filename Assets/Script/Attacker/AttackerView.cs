@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class AttackerView : MonoBehaviour
 {
-    private AttackerController attackerController;
+    public AttackerController attackerController;
     public Animator animator;
     public void SetController(AttackerController attackerController)
     {
@@ -35,8 +35,18 @@ public class AttackerView : MonoBehaviour
         animator.SetBool("isAttacking", enable);
     }
 
+    public void TriggerJumpAnimation()
+    {
+        animator.SetTrigger("JumpTrigger");
+    }
+
     public void TriggerDamageAnimation()
     {
         animator.SetTrigger("TakeDamage");
+    }
+
+    internal void Die()
+    {
+        Destroy(gameObject);
     }
 }

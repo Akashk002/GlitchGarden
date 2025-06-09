@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8484437806723836545}
   - component: {fileID: 2034291207714364573}
   - component: {fileID: 9186787620682993084}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18, y: 0.27}
+  m_Offset: {x: 0.3, y: 0.3487755}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -100,7 +100,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.35883904}
+  m_Size: {x: 1, y: 0.67639005}
   m_EdgeRadius: 0
 --- !u!50 &2034291207714364573
 Rigidbody2D:
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7198648233782488579}
   - component: {fileID: 7198648233782488588}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

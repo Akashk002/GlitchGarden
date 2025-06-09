@@ -11,15 +11,22 @@ public class DefenderAttackState : IStateDefender
 
     public void OnStateEnter()
     {
-
+        Owner.AttackAnimation(true);
     }
     public void Update()
     {
-
+        if (Owner.AttackerFound())
+        {
+            Owner.FiringProjectile();
+        }
+        else
+        {
+            stateMachine.ChangeState(DefenderStates.Idle);
+        }
     }
 
     public void OnStateExit()
     {
-
+        Owner.AttackAnimation(false);
     }
 }

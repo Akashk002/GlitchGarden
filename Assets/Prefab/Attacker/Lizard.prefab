@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1919605757646562308}
   - component: {fileID: -1584848894054107696}
   - component: {fileID: 5801318992781836455}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,13 +114,13 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.39, y: 0.52}
+  m_Offset: {x: 0.29, y: 0.34}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.32, y: 0.1}
+    pivot: {x: 0.2, y: 0.12}
     oldSize: {x: 1.882547, y: 1.3950349}
     newSize: {x: 1.882547, y: 1.3950349}
     adaptiveTilingThreshold: 0.5
@@ -205,7 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5691221417335935472}
   - component: {fileID: 1777617637573137625}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

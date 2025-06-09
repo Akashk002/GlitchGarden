@@ -6,7 +6,11 @@ using UnityEngine;
 public class DefenderView : MonoBehaviour
 {
     public Animator animator;
+    public LayerMask detectionLayer;
+    public float rayDistance = 15f;
+    public Transform shootPoint;
     private DefenderController defenderController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +20,7 @@ public class DefenderView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //defenderController.UpdateDefender();
+        defenderController.Update();
     }
 
     public void CheckHealth()
@@ -24,7 +28,10 @@ public class DefenderView : MonoBehaviour
         Debug.Log("Check Health");
     }
 
-
+    public void AttackAnimation(bool enable)
+    {
+        animator.SetBool("isAttacking", enable);
+    }
 
     public void AddStar()
     {
@@ -36,7 +43,7 @@ public class DefenderView : MonoBehaviour
         this.defenderController = defenderController;
     }
 
-    public void DefenderDie()
+    public void Die()
     {
         Destroy(gameObject);
     }

@@ -6,7 +6,7 @@ public class FoxController : AttackerController
 {
     private FoxStateMachine stateMachine;
 
-    public FoxController(AttackerScriptable attackerScriptable, Slot slot) : base(attackerScriptable, slot)
+    public FoxController(AttackerScriptable attackerScriptable, Slot slot, AttackerModel attackerModel) : base(attackerScriptable, slot, attackerModel)
     {
         attackerView.SetController(this);
         CreateStateMachine();

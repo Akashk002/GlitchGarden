@@ -21,7 +21,26 @@ public class DefenderService
 
             DefenderModel defenderModel = new DefenderModel(defenderScriptable);
 
-            DefenderController defenderController = new DefenderController(defenderScriptable, slot, defenderModel);
+            DefenderController defenderController = null;
+
+            switch (defenderType)
+            {
+                case DefenderType.StarTrophy:
+                    defenderController = new StarTrophyController(defenderScriptable, slot, defenderModel);
+                    break;
+                case DefenderType.Cactus:
+                    defenderController = new CactusController(defenderScriptable, slot, defenderModel);
+                    break;
+                case DefenderType.GraveStone:
+                    defenderController = new GraveStoneController(defenderScriptable, slot, defenderModel);
+                    break;
+                case DefenderType.Gnome:
+                    defenderController = new GnomeController(defenderScriptable, slot, defenderModel);
+                    break;
+                default:
+                    break;
+            }
+
             slot.SetDefenderController(defenderController);
             CurrencyHandler.Instance.SpendCurrency(defenderScriptable.Cost);
             return true;
