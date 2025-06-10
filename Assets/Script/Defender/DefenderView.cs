@@ -39,6 +39,7 @@ public class DefenderView : MonoBehaviour
 
     public void AddStar()
     {
+        AudioService.Instance.Play(SoundType.GetStar);
         CurrencyManager.Instance.AddCurrency(25);
     }
 

@@ -17,35 +17,41 @@ public class UIManager : GenericMonoSingleton<UIManager>
     // Start is called before the first frame update
     public void OpenGameOverPanel()
     {
+        AudioService.Instance.Play(SoundType.GameOver);
         PlayPauseGame();
         GameOverPanel.SetActive(true);
     }
 
     public void OpenGameCompletePanel()
     {
+        AudioService.Instance.Play(SoundType.GameComplete);
         PlayPauseGame();
         GameCompletePanel.SetActive(true);
     }
 
     public void OpenGamePausePanel()
     {
+        AudioService.Instance.Play(SoundType.GamePause);
         PlayPauseGame();
         GamePausePanel.SetActive(true);
     }
 
     public void ResumeGame()
     {
+        AudioService.Instance.PlayClickSound();
         PlayPauseGame();
         GamePausePanel.SetActive(false);
     }
     public void RestartGame()
     {
+        AudioService.Instance.PlayClickSound();
         PlayPauseGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void BackToMenu()
     {
+        AudioService.Instance.PlayClickSound();
         PlayPauseGame();
         SceneManager.LoadScene("Menu");
     }

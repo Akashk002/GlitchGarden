@@ -131,9 +131,8 @@ public class AttackerController
 
     public void AttackDefender()
     {
+        AudioService.Instance.Play(SoundType.AttackerAttack);
         DefenderController defenderController = slot.GetDefenderController();
-
-        Debug.Log("Attacking Defender: " + defenderController);
         defenderController.TakeDamage(attackerScriptable.Damage);
     }
 

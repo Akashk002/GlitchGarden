@@ -27,6 +27,7 @@ public class DefenderProjectile : MonoBehaviour
         AttackerView attackerView = collision.GetComponent<AttackerView>();
         if (attackerView)
         {
+            AudioService.Instance.Play(SoundType.BulletStrikeAttacker);
             attackerView.attackerController.TakeDamage(damageRate);
             Destroy(gameObject);
         }
