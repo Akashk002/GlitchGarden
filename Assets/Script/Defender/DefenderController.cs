@@ -20,6 +20,12 @@ public class DefenderController
         this.defenderScriptable = defenderScriptable;
     }
 
+    public void Configure(Vector3 spawnPosition)
+    {
+        defenderView.transform.position = spawnPosition;
+        defenderView.gameObject.SetActive(true);
+    }
+
     public virtual void Update()
     {
 
@@ -50,8 +56,9 @@ public class DefenderController
 
     public void Die()
     {
-        defenderView.Die();
         slot.RemoveDefenderController();
+        GameService.Instance.DefenderService.ReturnDefenderPool(this);
+        defenderView.gameObject.SetActive(false);
     }
 
     public void AttackAnimation(bool enable)
@@ -77,8 +84,8 @@ public class DefenderController
 
     public void Fire()
     {
-        DefenderProjectile projectile = Object.Instantiate(defenderScriptable.Projectile, defenderView.shootPoint.position, Quaternion.identity);
-        projectile.SetDamageRate(defenderScriptable.Damage);
+        AudioService.Instance.Play(SoundType.BulletShoot);
+        ProjectileController projectileController = GameService.Instance.projectileService.CreateProjectile(defenderScriptable.ProjectileType, defenderView.shootPoint.position);
     }
 
     public virtual void ChangeStateToIdle()

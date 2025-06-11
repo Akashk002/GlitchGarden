@@ -2789,6 +2789,11 @@ MonoBehaviour:
     AttackerScriptable: {fileID: 11400000, guid: 237b2b872d9342d43a7a8efc876ba2ff, type: 2}
   - AttackerType: 1
     AttackerScriptable: {fileID: 11400000, guid: a607eff60b8603648a50e2fe80520d2f, type: 2}
+  projectileDataList:
+  - projectileType: 0
+    projectileScriptable: {fileID: 11400000, guid: fa20d278e22598d4a989b06dff2e4c1a, type: 2}
+  - projectileType: 1
+    projectileScriptable: {fileID: 11400000, guid: 2ef2ff1b991609d48897ac9cfdc888c6, type: 2}
   rows: 5
   columns: 15
 --- !u!4 &872166120

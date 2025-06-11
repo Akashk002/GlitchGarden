@@ -5,26 +5,25 @@ using UnityEngine;
 public class AttackerService
 {
     private List<AttackerData> attackerDataList;
-
+    private AttackerPool attackerPool;
     public AttackerService(List<AttackerData> attackerDataList)
     {
         this.attackerDataList = attackerDataList;
+        this.attackerPool = new AttackerPool();
     }
 
-    public bool CreateAttacker(AttackerType attackerType)
+    public void CreateAttacker(AttackerType attackerType)
     {
         Slot slot = GetRandomSpawnSlot();
 
-        if (slot != null && slot.IsEmpty() && slot.GetSlotType() == SlotType.Spawn)
-        {
-            AttackerScriptable attackerScriptable = attackerDataList.Find(data => data.AttackerType == attackerType)?.AttackerScriptable;
+        AttackerScriptable attackerScriptable = attackerDataList.Find(data => data.AttackerType == attackerType)?.AttackerScriptable;
+        AttackerModel attackerModel = new AttackerModel(attackerScriptable);
 
-            AttackerModel attackerModel = new AttackerModel(attackerScriptable);
+        AttackerController attackerController = (attackerType == AttackerType.Lizard)
+            ? attackerPool.GetAttacker<LizardController>(attackerScriptable, slot, attackerModel)
+            : attackerPool.GetAttacker<FoxController>(attackerScriptable, slot, attackerModel);
 
-            AttackerController attackerController = (attackerType == AttackerType.Lizard) ? new LizardController(attackerScriptable, slot, attackerModel) : new FoxController(attackerScriptable, slot, attackerModel);
-            return true;
-        }
-        return false;
+        attackerController.Configure(slot.GetPos());
     }
 
     private Slot GetRandomSpawnSlot()
@@ -39,4 +38,6 @@ public class AttackerService
 
         return null;
     }
+
+    public void ReturnAttackerPool(AttackerController attackerController) => attackerPool.ReturnItem(attackerController);
 }

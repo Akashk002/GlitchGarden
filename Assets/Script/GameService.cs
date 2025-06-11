@@ -10,6 +10,7 @@ public class GameService : GenericMonoSingleton<GameService>
 
     [SerializeField] private List<DefenderData> DefenderDataList = new List<DefenderData>();
     [SerializeField] private List<AttackerData> AttackerDataList = new List<AttackerData>();
+    [SerializeField] private List<ProjectileData> projectileDataList = new List<ProjectileData>();
 
     public int rows = 7;
     public int columns = 15;
@@ -17,6 +18,7 @@ public class GameService : GenericMonoSingleton<GameService>
     public DefenderService DefenderService { get; private set; }
     public DefenderCellService DefenderCellService { get; private set; }
     public AttackerService attackerService { get; private set; }
+    public ProjectileService projectileService { get; private set; }
 
     private void Start()
     {
@@ -24,6 +26,7 @@ public class GameService : GenericMonoSingleton<GameService>
         DefenderCellService = new DefenderCellService(DefenderDataList, DefenderCellPrefab, DefenderCellTransform);
         DefenderService = new DefenderService(DefenderDataList);
         attackerService = new AttackerService(AttackerDataList);
+        projectileService = new ProjectileService(projectileDataList);
     }
 
     private void Update()

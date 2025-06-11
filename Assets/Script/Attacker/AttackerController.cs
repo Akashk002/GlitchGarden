@@ -25,6 +25,12 @@ public class AttackerController
         attackerModel.SetAttackerController(this);
     }
 
+    public void Configure(Vector3 spawnPosition)
+    {
+        attackerView.transform.position = spawnPosition;
+        attackerView.gameObject.SetActive(true);
+    }
+
     public void Moving()
     {
         if (!isMoving) return;
@@ -148,7 +154,8 @@ public class AttackerController
 
     public void Die()
     {
-        attackerView.Die();
+        GameService.Instance.attackerService.ReturnAttackerPool(this);
+        attackerView.gameObject.SetActive(false);
     }
 
     public virtual void TakeDamage(int val)

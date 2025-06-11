@@ -8,10 +8,9 @@ public class DefenderScriptable : ScriptableObject
     public DefenderType DefenderType;
     public Sprite sprite;
     public DefenderView DefenderPrefab;
-    public DefenderProjectile Projectile;
+    public ProjectileType ProjectileType;
     public int Health;
     public float FireRate;
-    public int Damage;
     public int Cost;
     public int RecoverTime;
 }

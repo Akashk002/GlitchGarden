@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6489400969282298141}
   - component: {fileID: 9176018461710783116}
   - component: {fileID: 926778147}
-  - component: {fileID: 925091694666624424}
+  - component: {fileID: 1731559807802806215}
   m_Layer: 0
   m_Name: Corgette
   m_TagString: Untagged
@@ -129,7 +129,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &925091694666624424
+--- !u!114 &1731559807802806215
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 349508125780800804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b3765b63dfbb241bbd4bbbbc6506fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cafe3d7ac490954bbd6a08d4ca71d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4775862015794560859
