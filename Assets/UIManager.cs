@@ -12,24 +12,32 @@ public class UIManager : GenericMonoSingleton<UIManager>
     [SerializeField] private Slider waveSlider;
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject GamePausePanel;
+    [SerializeField] private GameObject LevelCompletePanel;
     [SerializeField] private GameObject GameCompletePanel;
 
     // Start is called before the first frame update
-    public void OpenGameOverPanel()
+    public void ShowGameOverPanel()
     {
         AudioService.Instance.Play(SoundType.GameOver);
         PlayPauseGame();
         GameOverPanel.SetActive(true);
     }
 
-    public void OpenGameCompletePanel()
+    public void ShowGameCompletePanel()
     {
         AudioService.Instance.Play(SoundType.GameComplete);
         PlayPauseGame();
         GameCompletePanel.SetActive(true);
     }
 
-    public void OpenGamePausePanel()
+    public void ShowLevelCompletePanel()
+    {
+        AudioService.Instance.Play(SoundType.levelComplete);
+        PlayPauseGame();
+        LevelCompletePanel.SetActive(true);
+    }
+
+    public void ShowGamePausePanel()
     {
         AudioService.Instance.Play(SoundType.GamePause);
         PlayPauseGame();
@@ -46,6 +54,14 @@ public class UIManager : GenericMonoSingleton<UIManager>
     {
         AudioService.Instance.PlayClickSound();
         PlayPauseGame();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void NextLevel()
+    {
+        AudioService.Instance.PlayClickSound();
+        PlayPauseGame();
+        levelData.currentLevelIndex++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -66,8 +82,9 @@ public class UIManager : GenericMonoSingleton<UIManager>
         levelText.SetText("Level - " + level);
     }
 
-    public void UpdateLevelSlider(int value)
+    public void UpdateLevelSlider(int value, int maxValue)
     {
+        waveSlider.maxValue = maxValue;
         waveSlider.value = value;
     }
 

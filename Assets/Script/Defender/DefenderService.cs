@@ -8,7 +8,6 @@ public class DefenderService
     private List<DefenderData> DefenderDataList = new List<DefenderData>();
     private DefenderPool defenderPool;
 
-
     public DefenderService(List<DefenderData> DefenderDataList)
     {
         this.DefenderDataList = DefenderDataList;

@@ -12,19 +12,19 @@ public class GenericObjectPool<T> where T : class
 
     public virtual T GetItem<U>() where U : T
     {
-        Debug.Log($"[ObjectPool] Requesting item of type {typeof(U).Name}. Pool size: {pooledItems.Count}");
+        //Debug.Log($"[ObjectPool] Requesting item of type {typeof(U).Name}. Pool size: {pooledItems.Count}");
         if (pooledItems.Count > 0)
         {
             PooledItem<T> item = pooledItems.Find(item => !item.isUsed && item.Item is U);
             if (item != null)
             {
                 item.isUsed = true;
-                Debug.Log($"[ObjectPool] Reusing existing item of type {typeof(U).Name}.");
-                Debug.Log($"[ObjectPool] Item details: {item.Item.GetType().Name}, Used: {item.isUsed}");
+                //Debug.Log($"[ObjectPool] Reusing existing item of type {typeof(U).Name}.");
+                //Debug.Log($"[ObjectPool] Item details: {item.Item.GetType().Name}, Used: {item.isUsed}");
                 return item.Item;
             }
         }
-        Debug.Log($"[ObjectPool] No available item of type {typeof(U).Name}, creating new.");
+        //Debug.Log($"[ObjectPool] No available item of type {typeof(U).Name}, creating new.");
         return CreateNewPooledItem<U>();
     }
 
@@ -34,7 +34,7 @@ public class GenericObjectPool<T> where T : class
         newItem.Item = CreateItem<U>();
         newItem.isUsed = true;
         pooledItems.Add(newItem);
-        Debug.Log($"[ObjectPool] Created new item of type {typeof(U).Name}. New pool size: {pooledItems.Count}");
+        //Debug.Log($"[ObjectPool] Created new item of type {typeof(U).Name}. New pool size: {pooledItems.Count}");
         return newItem.Item;
     }
 
@@ -49,11 +49,11 @@ public class GenericObjectPool<T> where T : class
         if (pooledItem != null)
         {
             pooledItem.isUsed = false;
-            Debug.Log($"[ObjectPool] Returned item of type {item.GetType().Name} to pool.");
+            //Debug.Log($"[ObjectPool] Returned item of type {item.GetType().Name} to pool.");
         }
         else
         {
-            Debug.LogWarning($"[ObjectPool] Tried to return item of type {item.GetType().Name}, but it was not found in the pool.");
+            // Debug.LogWarning($"[ObjectPool] Tried to return item of type {item.GetType().Name}, but it was not found in the pool.");
         }
     }
 

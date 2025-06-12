@@ -19,4 +19,4 @@ MonoBehaviour:
   Health: 200
   FireRate: 0.3
   Cost: 200
-  RecoverTime: 60
+  RecoverTime: 40

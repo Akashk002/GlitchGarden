@@ -5,21 +5,28 @@ public class GridManager
 {
     private int rows = 5;
     private int columns = 9;
-    private float cellWidth = 1.2f;
-    private float cellHeight = 1.5f;
+    private float cellWidth = 1;//1.2f;
+    private float cellHeight = 1;//1.5f;
     Vector2 origin = Vector2.zero;
     private Slot slot;
     private Vector3[,] gridPositions;
     private Slot[,] slotArray;
+    private float spacingX = 1.2f; // Horizontal space between slots
+    private float spacingY = 1.5f; // Vertical space between slots
 
     public GridManager(int rows, int columns, Slot slot = null)
     {
         this.rows = rows;
         this.columns = columns;
         this.slot = slot;
-        origin = new Vector2(-(columns / 2f) - 1, -(rows / 2f) - .25f);
+
+        float totalWidth = (columns - 1) * spacingX;
+        float totalHeight = (rows - 1) * spacingY;
+        origin = new Vector2(-totalWidth / 2f, -totalHeight / 2f);
+
         GenerateGrid();
     }
+
 
     void GenerateGrid()
     {
@@ -32,8 +39,13 @@ public class GridManager
         {
             for (int y = 0; y < rows; y++)
             {
-                // Bottom-left corner as origin
-                Vector3 cellPos = new Vector3(x * cellWidth, y * cellHeight, 0f) + (Vector3)origin;
+                // Add padding to spacing
+                Vector3 cellPos = new Vector3(
+                    x * spacingX,
+                    y * spacingY,
+                    0f
+                ) + (Vector3)origin;
+
                 gridPositions[x, y] = cellPos;
 
                 if (slot != null)
@@ -44,15 +56,11 @@ public class GridManager
                     newSlot.SetSlotData(x, y, columns);
                     slotObj.name = $"Slot_{x}_{y}";
                     slotArray[x, y] = newSlot;
-
-                    if (x == 0 || x == columns - 1)
-                    {
-                        newSlot.GetComponent<SpriteRenderer>().enabled = false; // Hide the slots on the edges
-                    }
                 }
             }
         }
     }
+
 
     public Vector3 GetWorldPosition(int x, int y)
     {

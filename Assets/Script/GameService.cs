@@ -11,6 +11,7 @@ public class GameService : GenericMonoSingleton<GameService>
     [SerializeField] private List<DefenderData> DefenderDataList = new List<DefenderData>();
     [SerializeField] private List<AttackerData> AttackerDataList = new List<AttackerData>();
     [SerializeField] private List<ProjectileData> projectileDataList = new List<ProjectileData>();
+    [SerializeField] private List<LevelScriptable> levelScriptableList = new List<LevelScriptable>();
 
     public int rows = 7;
     public int columns = 15;
@@ -19,9 +20,13 @@ public class GameService : GenericMonoSingleton<GameService>
     public DefenderCellService DefenderCellService { get; private set; }
     public AttackerService attackerService { get; private set; }
     public ProjectileService projectileService { get; private set; }
+    public LevelService LevelService { get; private set; }
 
     private void Start()
     {
+        LevelScriptable levelScriptable = levelScriptableList[levelData.currentLevelIndex];
+        rows = levelScriptable.rowCount;
+        LevelService = new LevelService(levelScriptable);
         GridManager = new GridManager(rows, columns, Slot);
         DefenderCellService = new DefenderCellService(DefenderDataList, DefenderCellPrefab, DefenderCellTransform);
         DefenderService = new DefenderService(DefenderDataList);
@@ -40,5 +45,17 @@ public class GameService : GenericMonoSingleton<GameService>
         {
             attackerService.CreateAttacker(AttackerType.Lizard);
         }
+
+        LevelService.Update();
     }
+
+    public int GetLastLevelIndex()
+    {
+        return levelScriptableList.Count - 1;
+    }
+}
+
+public static class levelData
+{
+    public static int currentLevelIndex = 0;
 }

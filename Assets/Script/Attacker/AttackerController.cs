@@ -56,7 +56,7 @@ public class AttackerController
         {
             if (slot.GetSlotType() == SlotType.Base)
             {
-                UIManager.Instance.OpenGameOverPanel();
+                UIManager.Instance.ShowGameOverPanel();
             }
 
             slot = slot.GetNextSlot();
@@ -87,7 +87,7 @@ public class AttackerController
     {
         if (slot.GetSlotType() == SlotType.Base)
         {
-            UIManager.Instance.OpenGameOverPanel();
+            UIManager.Instance.ShowGameOverPanel();
             return;
         }
 
@@ -156,10 +156,16 @@ public class AttackerController
     {
         GameService.Instance.attackerService.ReturnAttackerPool(this);
         attackerView.gameObject.SetActive(false);
+        GameService.Instance.LevelService.CheckLevelComplete();
     }
 
     public virtual void TakeDamage(int val)
     {
         attackerModel.TakeDamage(val);
+    }
+
+    public bool CheckAttackerAlive()
+    {
+        return attackerView.gameObject.activeInHierarchy;
     }
 }

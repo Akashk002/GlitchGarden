@@ -5,7 +5,7 @@ using TMPro;
 
 public class CurrencyManager : GenericMonoSingleton<CurrencyManager>
 {
-    private int currencyAmount = 1000;
+    private int currencyAmount = 100;
     public int CurrencyAmount
     {
         get { return currencyAmount; }

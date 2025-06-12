@@ -15,7 +15,8 @@ MonoBehaviour:
   DefenderType: 0
   sprite: {fileID: 21300000, guid: 94c1b596cdc393547871c208a1d780ef, type: 3}
   DefenderPrefab: {fileID: -4904493723062553051, guid: 0457fb3b189bc80439382324a2eba697, type: 3}
+  ProjectileType: 0
   Health: 50
-  Damage: 0
+  FireRate: 0
   Cost: 50
-  RecoverTime: 15
+  RecoverTime: 10

@@ -57,6 +57,7 @@ public class DefenderController
     public void Die()
     {
         slot.RemoveDefenderController();
+        slot = null;
         GameService.Instance.DefenderService.ReturnDefenderPool(this);
         defenderView.gameObject.SetActive(false);
     }

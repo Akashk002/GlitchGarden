@@ -12,7 +12,7 @@ public class AttackerService
         this.attackerPool = new AttackerPool();
     }
 
-    public void CreateAttacker(AttackerType attackerType)
+    public AttackerController CreateAttacker(AttackerType attackerType)
     {
         Slot slot = GetRandomSpawnSlot();
 
@@ -24,11 +24,13 @@ public class AttackerService
             : attackerPool.GetAttacker<FoxController>(attackerScriptable, slot, attackerModel);
 
         attackerController.Configure(slot.GetPos());
+
+        return attackerController;
     }
 
     private Slot GetRandomSpawnSlot()
     {
-        var randomRow = Random.Range(0, GameService.Instance.rows - 1);
+        var randomRow = Random.Range(0, GameService.Instance.rows);
 
         Slot slot = GameService.Instance.GridManager.GetSlot(GameService.Instance.columns - 1, randomRow);
         if (slot != null && slot.GetSlotType() == SlotType.Spawn && slot.IsEmpty())

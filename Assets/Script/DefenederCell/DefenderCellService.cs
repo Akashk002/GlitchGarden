@@ -18,9 +18,11 @@ public class DefenderCellService
 
     private void CreateCell()
     {
-        for (int i = 0; i < defenderDataList.Count; i++)
+        var defenderTypeList = GameService.Instance.LevelService.GetDefenderList();
+
+        for (int i = 0; i < defenderTypeList.Count; i++)
         {
-            DefenderScriptable defenderScriptable = defenderDataList[i].DefenderScriptable;
+            DefenderScriptable defenderScriptable = defenderDataList.Find(data => data.defenderType == defenderTypeList[i])?.DefenderScriptable;
             DefenderCellController defenderCellController = new DefenderCellController(defenderScriptable, defenderCellPrefab, defenderCellTransform);
         }
     }

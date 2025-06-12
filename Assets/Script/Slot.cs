@@ -1,8 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class Slot : MonoBehaviour
 {
@@ -11,6 +11,9 @@ public class Slot : MonoBehaviour
     private int maxColumn;
     public SlotType slotType;
     private DefenderController defenderController = null;
+
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] List<Sprite> stoneSprite = new List<Sprite>();
 
     public Vector3 GetPos()
     {
@@ -31,6 +34,22 @@ public class Slot : MonoBehaviour
         this.columnIndex = columnIndex;
         this.maxColumn = maxColumn;
         SetSlotType();
+        SetSprite();
+        HideStones();
+    }
+
+    private void HideStones()
+    {
+        if (slotType == SlotType.Base || slotType == SlotType.Spawn)
+        {
+            spriteRenderer.enabled = false;
+        }
+    }
+
+    private void SetSprite()
+    {
+        int randomIndex = Random.Range(0, stoneSprite.Count);
+        spriteRenderer.sprite = stoneSprite[randomIndex];
     }
 
     public DefenderController GetDefenderController()
