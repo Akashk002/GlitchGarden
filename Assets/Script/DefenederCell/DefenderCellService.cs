@@ -1,10 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DefenderCellService
 {
-    [SerializeField] private List<DefenderData> defenderDataList = new List<DefenderData>();
+    private List<DefenderData> defenderDataList = new List<DefenderData>();
     private DefenderCellView defenderCellPrefab;
     private Transform defenderCellTransform;
 
@@ -26,8 +25,4 @@ public class DefenderCellService
             DefenderCellController defenderCellController = new DefenderCellController(defenderScriptable, defenderCellPrefab, defenderCellTransform);
         }
     }
-
-
-    public GameObject DefenderCellPrefab { get; }
-    public Transform DefenderCellTransform { get; }
 }

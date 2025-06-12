@@ -8,7 +8,6 @@ public class LizardController : AttackerController
 
     public LizardController(AttackerScriptable attackerScriptable, Slot slot, AttackerModel attackerModel) : base(attackerScriptable, slot, attackerModel)
     {
-        attackerView.SetController(this);
         CreateStateMachine();
         stateMachine.ChangeState(AttackerStates.Appear);
     }

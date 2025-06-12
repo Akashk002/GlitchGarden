@@ -9,17 +9,9 @@ public class AttackerAppearState : IStateAttacker
 
     public AttackerAppearState(IStateMachineAttacker stateMachine) => this.stateMachine = stateMachine;
 
-    public void OnStateEnter()
-    {
+    public void OnStateEnter() { }
 
-    }
-    public void Update()
-    {
+    public void Update() { }
 
-    }
-
-    public void OnStateExit()
-    {
-
-    }
+    public void OnStateExit() { }
 }

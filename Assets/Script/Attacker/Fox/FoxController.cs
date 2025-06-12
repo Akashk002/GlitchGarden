@@ -8,7 +8,6 @@ public class FoxController : AttackerController
 
     public FoxController(AttackerScriptable attackerScriptable, Slot slot, AttackerModel attackerModel) : base(attackerScriptable, slot, attackerModel)
     {
-        attackerView.SetController(this);
         CreateStateMachine();
         stateMachine.ChangeState(AttackerStates.Appear);
     }

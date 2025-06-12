@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System;
 
 public class DefenderCellImageHandler : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler
 {
@@ -12,8 +9,6 @@ public class DefenderCellImageHandler : MonoBehaviour, IPointerDownHandler, IDra
     private RectTransform rectTransform;
     private Vector2 originalAnchoredPosition;
     private Vector3 originalPosition;
-    private DefenderCellController defenderCellController;
-
     private bool cellActivate = true;
     private bool canAfford;
 
@@ -61,7 +56,8 @@ public class DefenderCellImageHandler : MonoBehaviour, IPointerDownHandler, IDra
     {
         if (!cellActivate) return;
         if (!canAfford) return;
-        bool defenderPlaced = GameService.Instance.DefenderService.CreateDefender(DefenderScriptable.DefenderType, eventData.position);
+        bool defenderPlaced = GameService.Instance.EventService.OnPlaceDefender.InvokeEvent(DefenderScriptable.DefenderType, eventData.position);
+        //bool defenderPlaced = GameService.Instance.DefenderService.CreateDefender(DefenderScriptable.DefenderType, eventData.position);
 
         if (defenderPlaced)
         {
@@ -95,10 +91,9 @@ public class DefenderCellImageHandler : MonoBehaviour, IPointerDownHandler, IDra
     }
 
 
-    internal void ConfigureCellImage(DefenderScriptable defenderScriptable, DefenderCellController defenderCellController)
+    internal void ConfigureCellImage(DefenderScriptable defenderScriptable)
     {
         cellImage.sprite = defenderScriptable.sprite;
-        this.defenderCellController = defenderCellController;
         this.DefenderScriptable = defenderScriptable;
     }
 }

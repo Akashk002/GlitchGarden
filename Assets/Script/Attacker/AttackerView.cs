@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class AttackerView : MonoBehaviour
 {
-    public AttackerController attackerController;
+    private AttackerController attackerController;
     public Animator animator;
     public void SetController(AttackerController attackerController)
     {
@@ -15,19 +15,12 @@ public class AttackerView : MonoBehaviour
 
     private void Update()
     {
-        if (attackerController != null)
-        {
-            attackerController.Update();
-        }
+        attackerController.Update();
     }
 
     public void ChangeStateToIdle()
     {
         attackerController.ChangeStateToIdle();
-    }
-    public virtual void ChangeStateToTakeDamage()
-    {
-
     }
 
     public void WalkAnimation(bool enable)
@@ -49,8 +42,8 @@ public class AttackerView : MonoBehaviour
         animator.SetTrigger("TakeDamage");
     }
 
-    internal void Die()
+    public void TakeDamage(int damageRate)
     {
-        Destroy(gameObject);
+        attackerController.TakeDamage(damageRate);
     }
 }

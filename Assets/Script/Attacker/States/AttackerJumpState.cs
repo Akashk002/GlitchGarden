@@ -19,8 +19,5 @@ public class AttackerJumpState : IStateAttacker
         Owner.Jumping();
     }
 
-    public void OnStateExit()
-    {
-
-    }
+    public void OnStateExit() { }
 }

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class DefenderController
 {
-    public DefenderScriptable defenderScriptable;
-    public DefenderView defenderView;
-    protected DefenderModel defenderModel;
-    protected Slot slot;
+    private DefenderScriptable defenderScriptable;
+    private DefenderView defenderView;
+    private DefenderModel defenderModel;
+    private Slot slot;
     private float fireTimer = 0f;
-
 
     public DefenderController(DefenderScriptable defenderScriptable, Slot slot, DefenderModel defenderModel)
     {
-        defenderView = Object.Instantiate(defenderScriptable.DefenderPrefab, slot.GetPos(), Quaternion.identity);
+        defenderView = Object.Instantiate(defenderScriptable.DefenderPrefab);
+        defenderView.SetController(this);
         this.slot = slot;
         this.defenderModel = defenderModel;
         defenderModel.SetDefenderController(this);
@@ -26,42 +26,6 @@ public class DefenderController
         defenderView.gameObject.SetActive(true);
     }
 
-    public virtual void Update()
-    {
-
-    }
-
-    public bool AttackerFound()
-    {
-        Vector2 direction = Vector2.right; // use Vector3.left for negative X
-        Vector2 origin = defenderView.transform.position + Vector3.up / 2;
-
-        int layerMask = LayerMask.GetMask("Attacker");
-
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction, defenderView.rayDistance, defenderView.detectionLayer);
-
-        if (hit.collider != null && hit.collider.GetComponent<AttackerView>())// && hit.collider.GetComponent<AttackerView>())
-        {
-            Debug.Log("Detected: " + hit.collider.gameObject.name);
-            return true;
-        }
-
-        return false;
-    }
-
-    public virtual void TakeDamage(int val)
-    {
-        defenderModel.TakeDamage(val);
-    }
-
-    public void Die()
-    {
-        slot.RemoveDefenderController();
-        slot = null;
-        GameService.Instance.DefenderService.ReturnDefenderPool(this);
-        defenderView.gameObject.SetActive(false);
-    }
-
     public void AttackAnimation(bool enable)
     {
         defenderView.AttackAnimation(enable);
@@ -70,6 +34,28 @@ public class DefenderController
     public void TriggerTakeDamageAnimation()
     {
         defenderView.TriggerTakeDamageAnimation();
+    }
+
+    public virtual void Update() { }
+
+    public virtual void ChangeStateToIdle() { }
+
+    public virtual void TakeDamage(int val)
+    {
+        defenderModel.TakeDamage(val);
+    }
+
+    public bool AttackerFound()
+    {
+        Vector2 direction = Vector2.right; // use Vector3.left for negative X
+        Vector2 origin = defenderView.transform.position + Vector3.up / 2;
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, defenderView.rayDistance, defenderView.detectionLayer);
+
+        if (hit.collider != null && hit.collider.GetComponent<AttackerView>())// && hit.collider.GetComponent<AttackerView>())
+        {
+            return true;
+        }
+        return false;
     }
 
     public void FiringProjectile()
@@ -86,11 +72,20 @@ public class DefenderController
     public void Fire()
     {
         AudioService.Instance.Play(SoundType.BulletShoot);
-        ProjectileController projectileController = GameService.Instance.projectileService.CreateProjectile(defenderScriptable.ProjectileType, defenderView.shootPoint.position);
+        GameService.Instance.EventService.OnShootProjectile.InvokeEvent(defenderScriptable.ProjectileType, defenderView.shootPoint.position);
+        // ProjectileController projectileController = GameService.Instance.projectileService.CreateProjectile(defenderScriptable.ProjectileType, defenderView.shootPoint.position);
     }
 
-    public virtual void ChangeStateToIdle()
+    public void Die()
     {
+        slot.RemoveDefenderController();
+        slot = null;
+        GameService.Instance.DefenderService.ReturnDefenderPool(this);
+        defenderView.gameObject.SetActive(false);
+    }
 
+    public DefenderType GetDefenderType()
+    {
+        return defenderScriptable.DefenderType;
     }
 }

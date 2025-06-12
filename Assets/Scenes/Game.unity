@@ -1638,7 +1638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 67.95642, y: 64.50546}
+  m_AnchoredPosition: {x: 67.9563, y: 64.50549}
   m_SizeDelta: {x: 126.3129, y: 129.0109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &577441473
@@ -2856,6 +2856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2efc40d30d121340a8fcfbc2732aac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starPoint: 25
   Slot: {fileID: 888612039633509529, guid: 5ae4f0fbedd42e34f9525bb2e19fe6d4, type: 3}
   DefenderCellPrefab: {fileID: 2723652470139379045, guid: fc35d9804252c074eab32d7a5d5d06c3, type: 3}
   DefenderCellTransform: {fileID: 577441472}

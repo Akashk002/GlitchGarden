@@ -17,4 +17,5 @@ MonoBehaviour:
   AttackerPrefab: {fileID: 9186787620682993084, guid: c292c0ca394951a448af7aad67f94f2f, type: 3}
   Health: 300
   Damage: 15
-  Speed: 0.3
+  Speed: 4
+  JumpSpeed: 10

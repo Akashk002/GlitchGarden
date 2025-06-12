@@ -11,7 +11,7 @@ public class AttackerTakeDamageState : IStateAttacker
 
     public void OnStateEnter()
     {
-        Owner.TriggerDamageAnimation();
+        Owner.TriggerTakeDamageAnimation();
     }
     public void Update()
     {
@@ -25,8 +25,5 @@ public class AttackerTakeDamageState : IStateAttacker
         }
     }
 
-    public void OnStateExit()
-    {
-
-    }
+    public void OnStateExit() { }
 }

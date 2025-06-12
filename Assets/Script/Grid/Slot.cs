@@ -1,15 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
 public class Slot : MonoBehaviour
 {
     private int rowIndex;
     private int columnIndex;
     private int maxColumn;
-    public SlotType slotType;
+    private SlotType slotType;
     private DefenderController defenderController = null;
 
     [SerializeField] SpriteRenderer spriteRenderer;
@@ -93,8 +90,6 @@ public class Slot : MonoBehaviour
     {
         return slotType;
     }
-
-
 }
 
 [System.Serializable]

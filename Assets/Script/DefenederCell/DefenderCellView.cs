@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
-using Unity.VisualScripting;
-using UnityEngine.EventSystems;
 
 public class DefenderCellView : MonoBehaviour
 {
@@ -25,6 +20,6 @@ public class DefenderCellView : MonoBehaviour
         nameText.text = defenderScriptable.name;
         costText.text = defenderScriptable.Cost.ToString();
         DefenderBGImage.sprite = defenderScriptable.sprite;
-        cellImageHandler.ConfigureCellImage(defenderScriptable, defenderCellController);
+        cellImageHandler.ConfigureCellImage(defenderScriptable);
     }
 }

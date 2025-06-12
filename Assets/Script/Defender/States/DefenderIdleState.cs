@@ -15,7 +15,7 @@ public class DefenderIdleState : IStateDefender
     }
     public void Update()
     {
-        DefenderType defenderType = Owner.defenderScriptable.DefenderType;
+        DefenderType defenderType = Owner.GetDefenderType();
 
         if ((defenderType == DefenderType.Cactus || defenderType == DefenderType.Gnome) && Owner.AttackerFound())
         {

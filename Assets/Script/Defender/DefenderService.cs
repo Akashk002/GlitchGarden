@@ -1,7 +1,6 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class DefenderService
 {
@@ -12,6 +11,16 @@ public class DefenderService
     {
         this.DefenderDataList = DefenderDataList;
         this.defenderPool = new DefenderPool();
+    }
+
+    public void SubscribeEvents()
+    {
+        GameService.Instance.EventService.OnPlaceDefender.AddListener(CreateDefender);
+    }
+
+    public void UnsubscribeEvents()
+    {
+        GameService.Instance.EventService.OnPlaceDefender.RemoveListener(CreateDefender);
     }
 
     public bool CreateDefender(DefenderType defenderType, Vector3 dropPostion)

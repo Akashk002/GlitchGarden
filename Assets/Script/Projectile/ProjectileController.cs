@@ -32,11 +32,11 @@ public class ProjectileController
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        AttackerView attackerView = collision.GetComponent<AttackerView>();
-        if (attackerView)
+        AttackerView attacker = collision.GetComponent<AttackerView>();
+        if (attacker)
         {
             AudioService.Instance.Play(SoundType.BulletStrikeAttacker);
-            attackerView.attackerController.TakeDamage(projectileScriptable.damage);
+            attacker.TakeDamage(projectileScriptable.damage);
             SelfDestruct();
         }
     }
@@ -55,10 +55,5 @@ public class ProjectileController
             return true;
         }
         return false;
-    }
-
-    public int GetDamageRate()
-    {
-        return projectileScriptable.damage;
     }
 }

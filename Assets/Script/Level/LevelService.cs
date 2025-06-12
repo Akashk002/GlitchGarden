@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -51,8 +50,23 @@ public class LevelService
     {
         int index = Random.Range(0, levelScriptable.attackerList.Count);
         AttackerType attackerType = levelScriptable.attackerList[index];
-        AttackerController attackerController = GameService.Instance.attackerService.CreateAttacker(attackerType);
+        Slot slot = GetRandomSpawnSlot();
+
+        AttackerController attackerController = GameService.Instance.EventService.OnSpawnAttacker.InvokeEvent(attackerType, slot);
+        //AttackerController attackerController = GameService.Instance.attackerService.CreateAttacker(attackerType, slot);
         attackerControllerList.Add(attackerController);
+    }
+
+    private Slot GetRandomSpawnSlot()
+    {
+        var randomRow = Random.Range(0, GameService.Instance.rows);
+
+        Slot slot = GameService.Instance.GridManager.GetSlot(GameService.Instance.columns - 1, randomRow);
+        if (slot != null && slot.GetSlotType() == SlotType.Spawn && slot.IsEmpty())
+        {
+            return slot;
+        }
+        return null;
     }
 
     public List<DefenderType> GetDefenderList()

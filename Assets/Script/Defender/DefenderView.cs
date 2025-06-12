@@ -17,6 +17,11 @@ public class DefenderView : MonoBehaviour
         defenderController.Update();
     }
 
+    public void SetController(DefenderController defenderController)
+    {
+        this.defenderController = defenderController;
+    }
+
     public void ChangeStateToIdle()
     {
         defenderController.ChangeStateToIdle();
@@ -31,19 +36,9 @@ public class DefenderView : MonoBehaviour
         animator.SetTrigger("TakeDamage");
     }
 
-    public void AddStar()
+    public void AddStarPoint()
     {
         AudioService.Instance.Play(SoundType.GetStar);
-        CurrencyManager.Instance.AddCurrency(25);
-    }
-
-    public void SetController(DefenderController defenderController)
-    {
-        this.defenderController = defenderController;
-    }
-
-    public void Die()
-    {
-        Destroy(gameObject);
+        CurrencyManager.Instance.AddCurrency(GameService.Instance.GetStarPoint());
     }
 }

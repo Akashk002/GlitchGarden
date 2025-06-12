@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,17 @@ public class ProjectileService
         projectilePool = new ProjectilePool();
     }
 
-    public ProjectileController CreateProjectile(ProjectileType projectileType, Vector3 pos)
+    internal void SubscribeEvents()
+    {
+        GameService.Instance.EventService.OnShootProjectile.AddListener(CreateProjectile);
+    }
+
+    internal void UnsubscribeEvents()
+    {
+        GameService.Instance.EventService.OnShootProjectile.RemoveListener(CreateProjectile);
+    }
+
+    public void CreateProjectile(ProjectileType projectileType, Vector3 pos)
     {
         ProjectileScriptable projectileScriptable = projectileDataList.Find(data => data.projectileType == projectileType)?.projectileScriptable;
 
@@ -22,8 +33,6 @@ public class ProjectileService
             : projectilePool.GetProjectile<AxeController>(projectileScriptable, pos);
 
         projectileController.Configure(pos);
-
-        return projectileController;
     }
 
     public void ReturnProjectilePool(ProjectileController projectileController) => projectilePool.ReturnItem(projectileController);

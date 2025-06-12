@@ -6,7 +6,7 @@ public class StarTrophyStateMachine : IStateMachineDefender
 {
     private DefenderController defenderController;
     private IStateDefender currentState;
-    protected Dictionary<DefenderStates, IStateDefender> States = new Dictionary<DefenderStates, IStateDefender>();
+    private Dictionary<DefenderStates, IStateDefender> States = new Dictionary<DefenderStates, IStateDefender>();
 
     public StarTrophyStateMachine(DefenderController defenderController)
     {

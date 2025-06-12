@@ -1,9 +1,10 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameService : GenericMonoSingleton<GameService>
 {
+    [SerializeField] private int starPoint = 25;
     [SerializeField] private Slot Slot;
     [SerializeField] private DefenderCellView DefenderCellPrefab;
     [SerializeField] private Transform DefenderCellTransform;
@@ -21,37 +22,50 @@ public class GameService : GenericMonoSingleton<GameService>
     public AttackerService attackerService { get; private set; }
     public ProjectileService projectileService { get; private set; }
     public LevelService LevelService { get; private set; }
+    public EventService EventService { get; private set; }
 
     private void Start()
     {
         LevelScriptable levelScriptable = levelScriptableList[levelData.currentLevelIndex];
         rows = levelScriptable.rowCount;
+
         LevelService = new LevelService(levelScriptable);
         GridManager = new GridManager(rows, columns, Slot);
         DefenderCellService = new DefenderCellService(DefenderDataList, DefenderCellPrefab, DefenderCellTransform);
         DefenderService = new DefenderService(DefenderDataList);
         attackerService = new AttackerService(AttackerDataList);
         projectileService = new ProjectileService(projectileDataList);
+        EventService = new EventService();
+        SubscribeEvents();
+    }
+
+    private void SubscribeEvents()
+    {
+        DefenderService.SubscribeEvents();
+        projectileService.SubscribeEvents();
+        attackerService.SubscribeEvents();
+    }
+
+    private void OnDisable()
+    {
+        DefenderService.UnsubscribeEvents();
+        projectileService.UnsubscribeEvents();
+        attackerService.UnsubscribeEvents();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightShift))
-        {
-            attackerService.CreateAttacker(AttackerType.Fox);
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            attackerService.CreateAttacker(AttackerType.Lizard);
-        }
-
         LevelService.Update();
     }
 
     public int GetLastLevelIndex()
     {
         return levelScriptableList.Count - 1;
+    }
+
+    public int GetStarPoint()
+    {
+        return starPoint;
     }
 }
 

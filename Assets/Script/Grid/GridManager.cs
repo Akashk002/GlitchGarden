@@ -1,12 +1,9 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GridManager
 {
     private int rows = 5;
     private int columns = 9;
-    private float cellWidth = 1;//1.2f;
-    private float cellHeight = 1;//1.5f;
     Vector2 origin = Vector2.zero;
     private Slot slot;
     private Vector3[,] gridPositions;
@@ -14,7 +11,7 @@ public class GridManager
     private float spacingX = 1.2f; // Horizontal space between slots
     private float spacingY = 1.5f; // Vertical space between slots
 
-    public GridManager(int rows, int columns, Slot slot = null)
+    public GridManager(int rows, int columns, Slot slot)
     {
         this.rows = rows;
         this.columns = columns;
@@ -40,12 +37,7 @@ public class GridManager
             for (int y = 0; y < rows; y++)
             {
                 // Add padding to spacing
-                Vector3 cellPos = new Vector3(
-                    x * spacingX,
-                    y * spacingY,
-                    0f
-                ) + (Vector3)origin;
-
+                Vector3 cellPos = new Vector3(x * spacingX, y * spacingY, 0f) + (Vector3)origin;
                 gridPositions[x, y] = cellPos;
 
                 if (slot != null)
@@ -60,7 +52,6 @@ public class GridManager
             }
         }
     }
-
 
     public Vector3 GetWorldPosition(int x, int y)
     {
@@ -79,17 +70,5 @@ public class GridManager
     public bool IsCellWithinBounds(int x, int y)
     {
         return x >= 0 && y >= 0 && x < columns && y < rows;
-    }
-
-    public Vector2Int GetGridPosition(Vector3 worldPosition)
-    {
-        int x = Mathf.FloorToInt(worldPosition.x);
-        int y = Mathf.FloorToInt(worldPosition.y);
-        return new Vector2Int(x, y);
-    }
-
-    public Slot[,] GetSlotArray()
-    {
-        return slotArray;
     }
 }

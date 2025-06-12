@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,18 @@ public class AttackerService
         this.attackerPool = new AttackerPool();
     }
 
-    public AttackerController CreateAttacker(AttackerType attackerType)
+    public void SubscribeEvents()
     {
-        Slot slot = GetRandomSpawnSlot();
+        GameService.Instance.EventService.OnSpawnAttacker.AddListener(CreateAttacker);
+    }
 
+    internal void UnsubscribeEvents()
+    {
+        GameService.Instance.EventService.OnSpawnAttacker.RemoveListener(CreateAttacker);
+    }
+
+    public AttackerController CreateAttacker(AttackerType attackerType, Slot slot)
+    {
         AttackerScriptable attackerScriptable = attackerDataList.Find(data => data.AttackerType == attackerType)?.AttackerScriptable;
         AttackerModel attackerModel = new AttackerModel(attackerScriptable);
 
@@ -26,19 +35,6 @@ public class AttackerService
         attackerController.Configure(slot.GetPos());
 
         return attackerController;
-    }
-
-    private Slot GetRandomSpawnSlot()
-    {
-        var randomRow = Random.Range(0, GameService.Instance.rows);
-
-        Slot slot = GameService.Instance.GridManager.GetSlot(GameService.Instance.columns - 1, randomRow);
-        if (slot != null && slot.GetSlotType() == SlotType.Spawn && slot.IsEmpty())
-        {
-            return slot;
-        }
-
-        return null;
     }
 
     public void ReturnAttackerPool(AttackerController attackerController) => attackerPool.ReturnItem(attackerController);

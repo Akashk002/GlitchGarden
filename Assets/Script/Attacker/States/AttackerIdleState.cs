@@ -9,10 +9,7 @@ public class AttackerIdleState : IStateAttacker
 
     public AttackerIdleState(IStateMachineAttacker stateMachine) => this.stateMachine = stateMachine;
 
-    public void OnStateEnter()
-    {
-
-    }
+    public void OnStateEnter() { }
 
     public void Update()
     {
@@ -33,8 +30,5 @@ public class AttackerIdleState : IStateAttacker
         }
     }
 
-    public void OnStateExit()
-    {
-
-    }
+    public void OnStateExit() { }
 }

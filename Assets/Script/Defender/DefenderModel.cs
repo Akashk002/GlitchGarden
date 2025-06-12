@@ -25,10 +25,4 @@ public class DefenderModel
             defenderController.Die();
         }
     }
-
-    public bool IsAlive()
-    {
-        return health > 0;
-    }
-
 }

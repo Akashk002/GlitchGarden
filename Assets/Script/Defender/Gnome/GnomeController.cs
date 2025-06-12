@@ -7,7 +7,6 @@ public class GnomeController : DefenderController
     private GnomeStateMachine stateMachine;
     public GnomeController(DefenderScriptable defenderScriptable, Slot slot, DefenderModel defenderModel) : base(defenderScriptable, slot, defenderModel)
     {
-        defenderView.SetController(this);
         CreateStateMachine();
         stateMachine.ChangeState(DefenderStates.Idle);
     }

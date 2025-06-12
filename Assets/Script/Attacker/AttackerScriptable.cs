@@ -11,6 +11,7 @@ public class AttackerScriptable : ScriptableObject
     public int Health;
     public int Damage;
     public float Speed;
+    public float JumpSpeed;
 }
 
 [System.Serializable]
