@@ -5,10 +5,16 @@ using UnityEngine;
 public class AttackerModel : MonoBehaviour
 {
     private AttackerController attackerController;
+    private int maxHealth;
     private int health;
     public AttackerModel(AttackerScriptable attackerScriptable)
     {
-        this.health = attackerScriptable.Health;
+        this.maxHealth = attackerScriptable.Health;
+    }
+
+    public void SetHealth()
+    {
+        health = maxHealth;
     }
 
     public void SetAttackerController(AttackerController attackerController)

@@ -5,10 +5,16 @@ using UnityEngine;
 public class DefenderModel
 {
     private DefenderController defenderController;
+    private int maxHealth;
     private int health;
     public DefenderModel(DefenderScriptable defenderScriptable)
     {
-        this.health = defenderScriptable.Health;
+        this.maxHealth = defenderScriptable.Health;
+    }
+
+    public void SetHealth()
+    {
+        health = maxHealth;
     }
 
     public void SetDefenderController(DefenderController defenderController)

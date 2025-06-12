@@ -28,6 +28,7 @@ public class AttackerController
     {
         attackerView.transform.position = spawnPosition;
         attackerView.gameObject.SetActive(true);
+        attackerModel.SetHealth();
     }
 
     public virtual void Update() { }

@@ -24,6 +24,7 @@ public class DefenderController
     {
         defenderView.transform.position = spawnPosition;
         defenderView.gameObject.SetActive(true);
+        defenderModel.SetHealth();
     }
 
     public void AttackAnimation(bool enable)
