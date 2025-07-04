@@ -1,67 +1,155 @@
 Gameplay video - https://youtu.be/J22cF_R0YAQ
 
-Project Structure & Script Overview
-Your project is organized into several main modules, each with its own set of scripts:
-Defender: Handles all logic related to defender units (e.g., Cactus, Gnome, GraveStone, StarTrophy).
-Attacker: Handles logic for enemy units (e.g., Lizard, Fox).
-Projectile: Manages projectiles fired by defenders.
-DefenederCell: Manages the UI and logic for defender selection cells.
-Grid: Manages the game grid and slots.
-Level: Handles level progression and spawning logic.
-Utilities: Contains shared services (e.g., event system, object pooling, singleton base).
-Audio: Manages sound effects and music.
-Design Patterns Used
+🔧 Project Structure & Script Overview
+I’ve structured the project into clean, modular components to ensure maintainability, scalability, and readability. Each module handles a specific responsibility within the game’s architecture:
+
+📁 Main Modules:
+Defender:
+Handles all logic for defender units such as Cactus, Gnome, GraveStone, and StarTrophy.
+
+Attacker:
+Manages logic for enemy units including Lizard and Fox.
+
+Projectile:
+Controls all logic related to projectiles fired by defenders.
+
+DefenderCell:
+Handles UI and logic for defender selection slots/cells.
+
+Grid:
+Manages the grid system and slots for unit placement.
+
+Level:
+Oversees level progression, wave management, and attacker spawning logic.
+
+Utilities:
+Contains reusable and global systems such as the Event System, Object Pooling, and Singleton base classes.
+
+Audio:
+Manages all music, SFX, and sound-related functionalities.
+
+🎯 Design Patterns Used
 1. State Machine Pattern
-Where Used: Both Defenders and Attackers.
-How:
-Each unit type (e.g., CactusController, GnomeController, LizardController, FoxController) has a dedicated state machine (e.g., CactusStateMachine, LizardStateMachine).
-State machines implement interfaces (IStateMachineDefender, IStateMachineAttacker) and manage transitions between states (Idle, Attack, TakeDamage, Die, etc.).
-States are implemented as classes (e.g., DefenderIdleState, AttackerAttackState) that encapsulate behavior for each state.
-Example: FoxController creates a FoxStateMachine, which manages state transitions and calls the appropriate logic for each state.
+📍 Where Used:
+
+Defenders and Attackers
+
+🧠 How I Applied It:
+
+Each unit (e.g., CactusController, LizardController) has a dedicated state machine (e.g., CactusStateMachine, FoxStateMachine) that governs transitions between states such as:
+
+Idle, Attack, TakeDamage, Die, etc.
+
+States are represented by standalone classes (e.g., DefenderIdleState, AttackerAttackState) implementing interfaces like IStateMachineDefender or IStateMachineAttacker.
+
+🔁 Example:
+
+FoxController creates a FoxStateMachine, which manages all behavior transitions and encapsulates the logic for each state.
+
 2. Service Locator Pattern
-Where Used: Throughout the project, especially in GameService and via singleton services.
-How:
-GameService acts as a central hub, providing access to all major services (e.g., DefenderService, AttackerService, ProjectileService, LevelService, EventService).
-Singleton pattern is used for services like AudioService, CurrencyManager, and GameService itself, via a generic base (GenericMonoSingleton<T>).
-Example: Any script can access GameService.Instance.DefenderService to interact with defenders, or AudioService.Instance to play sounds.
+📍 Where Used:
+
+Widely throughout the project using a central hub called GameService.
+
+🧠 How I Applied It:
+
+GameService acts as a global access point to major services like:
+
+DefenderService, AttackerService, ProjectileService, LevelService, AudioService, etc.
+
+These services use a generic singleton base class (GenericMonoSingleton<T>) to ensure one consistent instance throughout the game.
+
+🔁 Example:
+
+Any component can call GameService.Instance.DefenderService or AudioService.Instance to interact with systems without tightly coupling code.
+
 3. Observer Pattern
-Where Used: For event-driven communication between systems.
-How:
-The EventService class defines events using generic EventController classes, supporting different signatures.
-Systems subscribe to events (e.g., OnPlaceDefender, OnShootProjectile, OnSpawnAttacker) and react when those events are invoked.
-Example: DefenderService subscribes to OnPlaceDefender to handle defender placement, and ProjectileService subscribes to OnShootProjectile to spawn projectiles.
+📍 Where Used:
+
+For decoupled communication between systems using a centralized EventService.
+
+🧠 How I Applied It:
+
+EventService uses generic EventController<T> classes to define and manage game events like:
+
+OnPlaceDefender, OnShootProjectile, OnSpawnAttacker.
+
+Systems can subscribe, unsubscribe, and react to these events without knowing each other directly.
+
+🔁 Example:
+
+DefenderService listens for OnPlaceDefender to instantiate units.
+
+ProjectileService listens for OnShootProjectile to fire projectiles.
+
 4. MVC (Model-View-Controller) Pattern
-Where Used: For both Defenders and Attackers, and UI elements.
-How:
-Model: Holds data and logic (e.g., DefenderModel, AttackerModel).
-View: Handles rendering and user interaction (e.g., DefenderView, AttackerView, DefenderCellView).
-Controller: Orchestrates logic, updates model and view (e.g., DefenderController, AttackerController, DefenderCellController).
-Example: When a defender is placed, the controller creates the model and view, links them, and manages their interactions.
-Example Script Descriptions
-DefenderController.cs
+📍 Where Used:
+
+Defenders, Attackers, and various UI components like Defender Cells.
+
+🧠 How I Applied It:
+
+Model: Stores unit data and logic (DefenderModel, AttackerModel).
+
+View: Renders visuals and handles animation (DefenderView, AttackerView, DefenderCellView).
+
+Controller: Connects logic with visuals (DefenderController, AttackerController, DefenderCellController).
+
+🔁 Example:
+
+When a defender is placed:
+
+The controller initializes the model and view.
+
+It links them and manages all state transitions and data updates.
+
+🧾 Key Script Responsibilities
+🔹 DefenderController.cs
 Acts as the controller in MVC for defenders.
-Manages the defender's state, health, and attack logic.
-Delegates animation and visual updates to DefenderView.
-Uses a state machine for behavior transitions.
-AttackerController.cs
-Controller for attackers, following MVC.
-Manages movement, attacking, and state transitions.
-Uses a state machine for complex behaviors (e.g., idle, move, attack, jump, take damage, die).
-DefenderService.cs / AttackerService.cs
-Service classes responsible for creating, pooling, and managing units.
-Subscribe to relevant events via the observer pattern.
-Use the service locator pattern for accessing other services.
-EventService.cs
-Implements the observer pattern.
-Provides a flexible event system for decoupled communication between systems.
-GenericMonoSingleton.cs
-Implements the singleton pattern for services, supporting the service locator approach.
-DefenderCellController.cs / DefenderCellView.cs
-MVC for UI cells that allow the player to select and place defenders.
-Object Pooling (GenericObjectPool.cs, DefenderPool.cs, AttackerPool.cs, ProjectilePool.cs)
-Efficiently manages object reuse for performance.
-How the Patterns Work Together
-State Machines encapsulate unit behavior, making it easy to add new states or units.
-Service Locator (via singletons and GameService) provides global access to core systems, reducing coupling.
-Observer (via EventService) enables decoupled, event-driven communication, so systems can react to game events without direct references.
-MVC separates concerns, making the codebase more maintainable and testable.
+
+Manages health, attack logic, and behavior transitions.
+
+Delegates animation and visuals to DefenderView.
+
+Uses a state machine for dynamic behavior.
+
+🔹 AttackerController.cs
+MVC controller for attackers.
+
+Manages movement, attack behavior, and state transitions like jump, damage, and death.
+
+🔹 DefenderService.cs / AttackerService.cs
+Central services for creating, pooling, and managing unit lifecycles.
+
+Subscribed to relevant events via EventService.
+
+Use the Service Locator pattern for accessing other systems.
+
+🔹 EventService.cs
+Implements the Observer Pattern using event controllers.
+
+Enables decoupled communication across the game.
+
+🔹 GenericMonoSingleton.cs
+Base class for singleton services.
+
+Supports the Service Locator Pattern by enforcing one instance per system.
+
+🔹 DefenderCellController.cs / DefenderCellView.cs
+MVC for UI defender cells.
+
+Controls defender selection and placement logic.
+
+🔹 Object Pooling System
+(GenericObjectPool.cs, DefenderPool.cs, AttackerPool.cs, ProjectilePool.cs)
+
+Efficiently reuses units and projectiles to optimize performance.
+
+🔗 How the Patterns Work Together
+State Machines isolate unit behavior, enabling clean extensibility for new actions or units.
+
+Service Locator ensures all systems are easily accessible without tight coupling.
+
+Observer Pattern enables reactive, decoupled communication between systems (e.g., spawn, attack, place).
+
+MVC Architecture separates responsibilities, improving testability, debugging, and scalability.
