@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackerModel : MonoBehaviour
@@ -7,9 +5,14 @@ public class AttackerModel : MonoBehaviour
     private AttackerController attackerController;
     private int maxHealth;
     private int health;
+    public AttackerType AttackerType;
+    public int Damage;
+
     public AttackerModel(AttackerScriptable attackerScriptable)
     {
         this.maxHealth = attackerScriptable.Health;
+        this.AttackerType = attackerScriptable.AttackerType;
+        this.Damage = attackerScriptable.Damage;
     }
 
     public void SetHealth()

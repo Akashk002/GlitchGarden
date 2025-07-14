@@ -4,7 +4,7 @@ public class GridManager
 {
     private int rows = 5;
     private int columns = 9;
-    Vector2 origin = Vector2.zero;
+    private Vector2 origin = Vector2.zero;
     private Slot slot;
     private Vector3[,] gridPositions;
     private Slot[,] slotArray;
@@ -24,8 +24,7 @@ public class GridManager
         GenerateGrid();
     }
 
-
-    void GenerateGrid()
+    private void GenerateGrid()
     {
         GameObject gameObject = new GameObject("Slots");
 

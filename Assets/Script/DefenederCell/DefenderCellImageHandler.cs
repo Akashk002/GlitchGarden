@@ -4,21 +4,14 @@ using UnityEngine.EventSystems;
 
 public class DefenderCellImageHandler : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler
 {
+    [SerializeField] private Image cellImage;
+    [SerializeField] private RectTransform rectTransform;
     private DefenderScriptable DefenderScriptable;
-    private Image cellImage;
-    private RectTransform rectTransform;
     private Vector2 originalAnchoredPosition;
     private Vector3 originalPosition;
     private bool cellActivate = true;
     private bool canAfford;
 
-    // Start is called before the first frame update
-
-    private void Awake()
-    {
-        rectTransform = GetComponent<RectTransform>();
-        cellImage = GetComponent<Image>();
-    }
     private void Start()
     {
         originalPosition = rectTransform.localPosition;
@@ -38,6 +31,7 @@ public class DefenderCellImageHandler : MonoBehaviour, IPointerDownHandler, IDra
             canAfford = false;
         }
     }
+
     public void OnPointerDown(PointerEventData eventData)
     {
         if (!cellActivate) return;
@@ -57,7 +51,6 @@ public class DefenderCellImageHandler : MonoBehaviour, IPointerDownHandler, IDra
         if (!cellActivate) return;
         if (!canAfford) return;
         bool defenderPlaced = GameService.Instance.EventService.OnPlaceDefender.InvokeEvent(DefenderScriptable.DefenderType, eventData.position);
-        //bool defenderPlaced = GameService.Instance.DefenderService.CreateDefender(DefenderScriptable.DefenderType, eventData.position);
 
         if (defenderPlaced)
         {
@@ -89,7 +82,6 @@ public class DefenderCellImageHandler : MonoBehaviour, IPointerDownHandler, IDra
                 cellActivate = true;
             });
     }
-
 
     internal void ConfigureCellImage(DefenderScriptable defenderScriptable)
     {

@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-
 public class CurrencyManager : GenericMonoSingleton<CurrencyManager>
 {
     private int currencyAmount = 100;

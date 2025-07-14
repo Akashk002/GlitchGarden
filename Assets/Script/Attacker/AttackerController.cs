@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackerController
 {
     private AttackerView attackerView;
-    private AttackerScriptable attackerScriptable;
     private AttackerModel attackerModel;
     private Slot slot;
 
@@ -18,7 +15,6 @@ public class AttackerController
     {
         attackerView = Object.Instantiate(attackerScriptable.AttackerPrefab, slot.GetPos(), Quaternion.identity);
         attackerView.SetController(this);
-        this.attackerScriptable = attackerScriptable;
         this.slot = slot;
         this.attackerModel = attackerModel;
         attackerModel.SetAttackerController(this);
@@ -142,12 +138,12 @@ public class AttackerController
     {
         AudioService.Instance.Play(SoundType.AttackerAttack);
         DefenderController defenderController = slot.GetDefenderController();
-        defenderController.TakeDamage(attackerScriptable.Damage);
+        defenderController.TakeDamage(attackerModel.Damage);
     }
 
     public AttackerType GetAttackerType()
     {
-        return attackerScriptable.AttackerType;
+        return attackerModel.AttackerType;
     }
 
     public DefenderType GetSlotDefenderType()

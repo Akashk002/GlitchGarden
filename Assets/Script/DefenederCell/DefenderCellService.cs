@@ -24,5 +24,6 @@ public class DefenderCellService
             DefenderScriptable defenderScriptable = defenderDataList.Find(data => data.defenderType == defenderTypeList[i])?.DefenderScriptable;
             DefenderCellController defenderCellController = new DefenderCellController(defenderScriptable, defenderCellPrefab, defenderCellTransform);
         }
+
     }
 }

@@ -7,9 +7,16 @@ public class DefenderModel
     private DefenderController defenderController;
     private int maxHealth;
     private int health;
+    public DefenderType DefenderType;
+    public DefenderView Defenderprefab;
+    internal ProjectileType ProjectileType;
+
     public DefenderModel(DefenderScriptable defenderScriptable)
     {
         this.maxHealth = defenderScriptable.Health;
+        this.DefenderType = defenderScriptable.DefenderType;
+        this.Defenderprefab = defenderScriptable.DefenderPrefab;
+        this.ProjectileType = defenderScriptable.ProjectileType;
     }
 
     public void SetHealth()

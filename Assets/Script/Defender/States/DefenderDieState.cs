@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class DefenderDieState : IStateDefender
 {
     public DefenderController Owner { get; set; }

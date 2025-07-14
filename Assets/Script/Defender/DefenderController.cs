@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DefenderController
 {
-    private DefenderScriptable defenderScriptable;
     private DefenderView defenderView;
     private DefenderModel defenderModel;
     private Slot slot;
@@ -17,7 +16,6 @@ public class DefenderController
         this.slot = slot;
         this.defenderModel = defenderModel;
         defenderModel.SetDefenderController(this);
-        this.defenderScriptable = defenderScriptable;
     }
 
     public void Configure(Vector3 spawnPosition)
@@ -52,7 +50,7 @@ public class DefenderController
         Vector2 origin = defenderView.transform.position + Vector3.up / 2;
         RaycastHit2D hit = Physics2D.Raycast(origin, direction, defenderView.rayDistance, defenderView.detectionLayer);
 
-        if (hit.collider != null && hit.collider.GetComponent<AttackerView>())// && hit.collider.GetComponent<AttackerView>())
+        if (hit.collider != null && hit.collider.GetComponent<AttackerView>())
         {
             return true;
         }
@@ -73,7 +71,7 @@ public class DefenderController
     public void Fire()
     {
         AudioService.Instance.Play(SoundType.BulletShoot);
-        GameService.Instance.EventService.OnShootProjectile.InvokeEvent(defenderScriptable.ProjectileType, defenderView.shootPoint.position);
+        GameService.Instance.EventService.OnShootProjectile.InvokeEvent(defenderModel.ProjectileType, defenderView.shootPoint.position);
         // ProjectileController projectileController = GameService.Instance.projectileService.CreateProjectile(defenderScriptable.ProjectileType, defenderView.shootPoint.position);
     }
 
@@ -87,6 +85,11 @@ public class DefenderController
 
     public DefenderType GetDefenderType()
     {
-        return defenderScriptable.DefenderType;
+        return defenderModel.DefenderType;
+    }
+
+    internal void TakeDamage(object damage)
+    {
+        throw new System.NotImplementedException();
     }
 }
