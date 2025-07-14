@@ -59,7 +59,7 @@ public class AttackerController
     public void Moving()
     {
         if (!isMoving) return;
-        attackerView.transform.position = Vector3.MoveTowards(attackerView.transform.position, targetPosition, (attackerScriptable.Speed * Time.deltaTime) / 10);
+        attackerView.transform.position = Vector3.MoveTowards(attackerView.transform.position, targetPosition, (attackerModel.Speed * Time.deltaTime) / 10);
         if (Vector3.Distance(attackerView.transform.position, targetPosition) < 0.01f)
         {
             slot = slot.GetNextSlot();
@@ -76,7 +76,7 @@ public class AttackerController
     public void Jumping()
     {
         if (!isMoving) return;
-        attackerView.transform.position = Vector3.MoveTowards(attackerView.transform.position, targetPosition, (attackerScriptable.JumpSpeed * Time.deltaTime) / 10);
+        attackerView.transform.position = Vector3.MoveTowards(attackerView.transform.position, targetPosition, (attackerModel.JumpSpeed * Time.deltaTime) / 10);
         if (Vector3.Distance(attackerView.transform.position, targetPosition) < 0.01f)
         {
             if (slot.GetSlotType() == SlotType.Base)

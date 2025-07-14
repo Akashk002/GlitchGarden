@@ -7,12 +7,16 @@ public class AttackerModel : MonoBehaviour
     private int health;
     public AttackerType AttackerType;
     public int Damage;
+    public float JumpSpeed;
+    public float Speed;
 
     public AttackerModel(AttackerScriptable attackerScriptable)
     {
         this.maxHealth = attackerScriptable.Health;
         this.AttackerType = attackerScriptable.AttackerType;
         this.Damage = attackerScriptable.Damage;
+        this.JumpSpeed = attackerScriptable.JumpSpeed;
+        this.Speed = attackerScriptable.Speed;
     }
 
     public void SetHealth()
